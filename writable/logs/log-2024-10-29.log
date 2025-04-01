@@ -1,0 +1,19 @@
+CRITICAL - 2024-10-29 09:56:48 --> ErrorException: Undefined array key "userType"
+[Method: POST, Route: createemp/tbl_register]
+in APPPATH\Controllers\Home.php on line 517.
+ 1 APPPATH\Controllers\Home.php(517): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userType"', 'C:\\xampp\\htdocs\\OPDClinic\\app\\Controllers\\Home.php', 517)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createemp('tbl_register')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-29 13:00:50 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::update(), 1 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: POST, Route: update/tbl_booked_slots]
+in APPPATH\Controllers\Home.php on line 313.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->update('tbl_booked_slots')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

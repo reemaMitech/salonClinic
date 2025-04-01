@@ -1,0 +1,350 @@
+DEBUG - 2024-12-23 05:26:59 --> Received data: Array
+(
+    [systolic] => 120
+    [diastolic] => 80
+    [fasting] => 90
+    [pp] => 110
+    [weight] => 50
+    [bmi] => 3
+    [illness] => test23
+    [symptoms] => test23
+    [treatment] => test23
+    [followUpDate] => 2024-12-30
+    [fees] => 1000
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 05:26:59 --> Appointment ID: 52
+DEBUG - 2024-12-23 05:26:59 --> Fees: 1000
+DEBUG - 2024-12-23 06:16:59 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-23
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 6
+                    [diagnosis] => test
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+ERROR - 2024-12-23 06:16:59 --> Missing keys in request data
+DEBUG - 2024-12-23 06:16:59 --> Appointment ID: 52
+ERROR - 2024-12-23 06:17:01 --> Error inserting data: Array to string conversion
+DEBUG - 2024-12-23 06:23:23 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-23
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 6
+                    [diagnosis] => test23
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 06:23:23 --> Appointment ID: 52
+DEBUG - 2024-12-23 06:26:53 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-23
+                    [start_date] => 2024-12-07
+                    [total_leave_days] => 10
+                    [diagnosis] => yreteyy
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 06:26:53 --> Appointment ID: 52
+DEBUG - 2024-12-23 06:27:48 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-17
+                    [start_date] => 2024-12-07
+                    [total_leave_days] => 10
+                    [diagnosis] => yreteyy
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 06:27:48 --> Appointment ID: 52
+DEBUG - 2024-12-23 07:20:33 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-08
+                    [total_leave_days] => 3
+                    [diagnosis] => test test test testtses           
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 07:20:33 --> Appointment ID: 52
+DEBUG - 2024-12-23 07:21:25 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-08
+                    [total_leave_days] => 3
+                    [diagnosis] => test test test testtses           
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 07:21:25 --> Appointment ID: 52
+ERROR - 2024-12-23 08:10:17 --> ErrorException: pg_query(): Query failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SET search_path...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SET search_path...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(87): CodeIgniter\Database\BaseConnection->simpleQuery('SET search_path...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#5 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#6 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-12-23 08:10:17 --> Error connecting to the database: ErrorException: pg_query(): Query failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SET search_path...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SET search_path...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(87): CodeIgniter\Database\BaseConnection->simpleQuery('SET search_path...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#5 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#6 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:198
+Stack trace:
+#0 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SET search_path...')
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(87): CodeIgniter\Database\BaseConnection->simpleQuery('SET search_path...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2024-12-23 08:10:17 --> ErrorException: pg_query(): Cannot set connection to blocking mode in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'pg_query(): Can...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData...')
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-12-23 08:10:17 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Cannot set connection to blocking mode
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-23 08:10:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Cannot set connection to blocking mode
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_branch\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_branch\', NULL)')
+ 3 APPPATH\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-23 08:10:17 --> [Caused by] ErrorException: pg_query(): Cannot set connection to blocking mode
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'pg_query(): Cannot set connection to blocking mode', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData(NULL, \'tbl_branch\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_branch\', NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_branch\', NULL)')
+ 5 APPPATH\Controllers\Home.php(280): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-23 10:09:48 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 3
+                    [diagnosis] => Joint pain
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 10:09:48 --> Appointment ID: 52
+DEBUG - 2024-12-23 10:10:34 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 11
+                    [diagnosis] => Joint pain123
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 10:10:34 --> Appointment ID: 52
+DEBUG - 2024-12-23 10:12:06 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 13
+                    [diagnosis] => Joint pain123
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 10:12:06 --> Appointment ID: 52
+DEBUG - 2024-12-23 10:17:33 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 13
+                    [diagnosis] => Joint pain
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 10:17:33 --> Appointment ID: 52
+DEBUG - 2024-12-23 10:27:35 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 13
+                    [diagnosis] => Joint pain123
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 10:27:35 --> Appointment ID: 52
+DEBUG - 2024-12-23 10:27:47 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-04
+                    [total_leave_days] => 13
+                    [diagnosis] => Joint pain
+                )
+
+        )
+
+    [appointment_id] => 52
+    [record_date] => 2024-12-23
+)
+
+DEBUG - 2024-12-23 10:27:47 --> Appointment ID: 52

@@ -1,0 +1,196 @@
+ERROR - 2024-11-07 11:48:31 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+CRITICAL - 2024-11-07 11:48:31 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+[Method: GET, Route: readAppointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-07 11:48:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-07 11:51:01 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+CRITICAL - 2024-11-07 11:51:01 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+[Method: GET, Route: readAppointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-07 11:51:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-07 11:54:51 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+CRITICAL - 2024-11-07 11:54:51 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+[Method: GET, Route: readAppointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-07 11:54:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-07 11:56:21 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+CRITICAL - 2024-11-07 11:56:21 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+[Method: GET, Route: readAppointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-07 11:56:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'name'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."name" AS "section_name", "tbl_register"."full_name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-07 13:23:20 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: A socket operation was attempted to an unreachable host.
+ SQLSTATE: 08001, code: 10065
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10065 in C:\xampp\htdocs\OPDClinic\system\Database\SQLSRV\Connection.php:144
+Stack trace:
+#0 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\OPDClinic\system\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_app...', Array, false)
+#3 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+#4 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-11-07 13:23:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: A socket operation was attempted to an unreachable host.
+ SQLSTATE: 08001, code: 10065
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10065
+[Method: GET, Route: readAppointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_section"."section_name" AS "section_name", "tbl_register"."name" AS "consultant_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1576): CodeIgniter\Database\SQLSRV\Builder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->readAppointments()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -1,0 +1,1431 @@
+ERROR - 2025-03-18 04:29:41 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 04:29:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: POST, Route: authenticate]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_opdproductkey"
+WHERE "Project_Url" = :Project_Url:', [...], false)
+ 3 APPPATH\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:29:43 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:29:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_todays_appointment_data/tbl_appointment]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays_appointment_data(?, NULL, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:29:44 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_con...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:29:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_conducted_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:29:44 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 04:29:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_where_condition_data/tbl_register/Consultant]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_register"
+WHERE "role" = :role:
+AND "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:29:44 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancel...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 04:29:44 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcomi...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 04:29:44 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pendin...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:29:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_upcoming_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcoming_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 04:29:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_pending_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 04:29:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_cancelled_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancelled_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:29:44 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:29:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:31:16 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 04:31:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: POST, Route: authenticate]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_opdproductkey"
+WHERE "Project_Url" = :Project_Url:', [...], false)
+ 3 APPPATH\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcomi...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pendin...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_upcoming_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcoming_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_pending_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_con...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_todays_appointment_data/tbl_appointment]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays_appointment_data(?, NULL, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_conducted_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_where_condition_data/tbl_register/Consultant]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_register"
+WHERE "role" = :role:
+AND "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancel...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_cancelled_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancelled_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:31:17 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:31:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:55 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 04:34:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: POST, Route: authenticate]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_opdproductkey"
+WHERE "Project_Url" = :Project_Url:', [...], false)
+ 3 APPPATH\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:55 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:34:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_todays_appointment_data/tbl_appointment]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays_appointment_data(?, NULL, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:56 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcomi...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_upcoming_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcoming_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:56 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_con...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_conducted_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:56 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pendin...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_pending_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:56 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 04:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_where_condition_data/tbl_register/Consultant]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_register"
+WHERE "role" = :role:
+AND "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:56 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancel...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:34:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_cancelled_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancelled_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 04:34:57 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 04:34:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:11:49 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 07:11:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: POST, Route: authenticate]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_opdproductkey"
+WHERE "Project_Url" = :Project_Url:', [...], false)
+ 3 APPPATH\Controllers\Home.php(143): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->authenticate()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:12:00 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancel...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 07:12:00 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcomi...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 07:12:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_cancelled_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1634): CodeIgniter\Database\BaseConnection->query('CALL get_cancelled_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:12:00 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 07:12:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_upcoming_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1575): CodeIgniter\Database\BaseConnection->query('CALL get_upcoming_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getUpcomingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:12:00 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pendin...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 07:12:01 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 07:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_pending_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1695): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 07:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_where_condition_data/tbl_register/Consultant]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_register"
+WHERE "role" = :role:
+AND "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:12:01 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_con...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 07:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_todays_appointment_data/tbl_appointment]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1330): CodeIgniter\Database\BaseConnection->query('CALL get_todays_appointment_data(?, NULL, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_todays_appointment_data('tbl_appointment')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 07:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(1512): CodeIgniter\Database\BaseConnection->query('CALL getall_conducted_appointments(?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:12:01 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 07:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:13:27 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_labtest')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 07:13:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_labtest]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_labtest')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:30:34 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_labtest')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 07:30:34 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 07:30:34 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_labtest')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-18 07:30:34 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 07:30:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_labtest]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_labtest')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 07:30:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:30:34 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 07:30:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_where_condition_data/tbl_register/Consultant]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_register"
+WHERE "role" = :role:
+AND "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 07:30:34 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-03-18 07:30:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_branch]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_branch')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 07:30:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: get_where_condition_data/tbl_register/Consultant]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "tbl_register"
+WHERE "role" = :role:
+AND "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1826): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->get_where_condition_data('tbl_register', 'Consultant')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 07:30:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; to address: Unknown host
+[Method: GET, Route: read/tbl_labtest]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(366): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_labtest')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 09:56:18 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 09:56:18 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 09:56:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 09:56:18 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 10:01:11 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 10:01:11 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 10:01:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 10:01:11 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: value too long for type character(1)
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","is_active":true,"is_deleted":false}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 11:07:46 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 11:07:46 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:07:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:07:46 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 11:07:50 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 11:07:50 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:07:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:07:50 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","is_active":"N","is_deleted":"N"}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 11:11:00 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 11:11:00 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:11:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"200","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"200","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:11:00 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"200","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"200","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"200","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 11:13:40 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 11:13:40 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:13:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:13:40 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: column &quot;bufferTime&quot; of relation &quot;tbl_servicemst&quot; does not exist
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-18 11:20:14 --> ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: invalid input syntax for type integer: &quot;45 min&quot;
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_in...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_in...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_in...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_in...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-18 11:20:14 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: invalid input syntax for type integer: &quot;45 min&quot;
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+[Method: POST, Route: create/tbl_servicemst]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:20:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  Record creation failed: invalid input syntax for type integer: &quot;45 min&quot;
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 3 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-18 11:20:14 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  Record creation failed: invalid input syntax for type integer: &quot;45 min&quot;
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  Record creation failed: invalid input syntax for type integer: &quot;45 min&quot;
+CONTEXT:  PL/pgSQL function dynamic_insert(text,jsonb) line 38 at RAISE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL dynamic_insert(\'tbl_servicemst\', \'{"name":"Hair Cut","duration":"45 min","bufferTime":"10","price":"200","perslotcustomer":"1","is_active":"Y","is_deleted":"Y"}\'::jsonb)')
+ 5 APPPATH\Controllers\Home.php(347): CodeIgniter\Database\BaseConnection->query('CALL dynamic_insert(?, ?::jsonb)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_servicemst')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

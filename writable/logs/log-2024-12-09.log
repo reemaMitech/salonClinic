@@ -1,0 +1,127 @@
+ERROR - 2024-12-09 09:50:23 --> ErrorException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(324): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-12-09 09:50:23 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.
+[Method: POST, Route: createcunsltant/tbl_register/50]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(324): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR)
+                )', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 09:50:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$sCc8r61OO1.Y4Igk8FnSIezfS3ff.5KyiAscdRWAhWa2YrqHQ1d9m\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR)
+                )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$sCc8r61OO1.Y4Igk8FnSIezfS3ff.5KyiAscdRWAhWa2YrqHQ1d9m\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR)
+                )')
+ 3 APPPATH\Controllers\Home.php(324): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR)
+                )', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 09:50:23 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$sCc8r61OO1.Y4Igk8FnSIezfS3ff.5KyiAscdRWAhWa2YrqHQ1d9m\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR)
+                )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$sCc8r61OO1.Y4Igk8FnSIezfS3ff.5KyiAscdRWAhWa2YrqHQ1d9m\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR)
+                )')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$sCc8r61OO1.Y4Igk8FnSIezfS3ff.5KyiAscdRWAhWa2YrqHQ1d9m\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR)
+                )')
+ 5 APPPATH\Controllers\Home.php(324): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be null, triggering insert
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR)
+                )', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

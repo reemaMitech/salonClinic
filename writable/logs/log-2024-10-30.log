@@ -1,0 +1,15 @@
+CRITICAL - 2024-10-30 05:25:40 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::update(), 1 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: POST, Route: update/tbl_booked_slots]
+in APPPATH\Controllers\Home.php on line 313.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->update('tbl_booked_slots')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-30 06:40:46 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-10-30 06:41:10 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-10-30 06:51:30 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-10-30 06:51:44 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-10-30 12:04:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-10-30 12:35:40 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.

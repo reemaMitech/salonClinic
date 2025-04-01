@@ -1,0 +1,24 @@
+ERROR - 2024-10-22 11:33:47 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'branch'.
+CRITICAL - 2024-10-22 11:33:47 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'branch'.
+[Method: POST, Route: create/tbl_consultants]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "OPDclinic"."dbo"."tbl_consultants" ("name","degree","section","branch") VALUES (:name:, :degree:, :section:, :branch:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(129): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_consultants')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-22 11:33:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'branch'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('INSERT INTO "OPDclinic"."dbo"."tbl_consultants" ("name","degree","section","branch") VALUES (\'Ramdas A.\', \'MBBS DNB\', \'General Physician\', \'branch1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "OPDclinic"."dbo"."tbl_consultants" ("name","degree","section","branch") VALUES (\'Ramdas A.\', \'MBBS DNB\', \'General Physician\', \'branch1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "OPDclinic"."dbo"."tbl_consultants" ("name","degree","section","branch") VALUES (:name:, :degree:, :section:, :branch:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(129): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->create('tbl_consultants')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

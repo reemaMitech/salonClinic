@@ -1,0 +1,1194 @@
+DEBUG - 2025-03-31 05:08:39 --> Received request for table: tbl_stylists, ID: 0
+CRITICAL - 2025-03-31 05:20:40 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "${formData.id}"
+[Method: POST, Route: createcunsltant/tbl_stylists/$%7BformData.id%7D]
+in SYSTEMPATH\Router\Router.php on line 736.
+ 1 SYSTEMPATH\Router\Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('createcunsltant/tbl_stylists/${formData.id}')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('createcunsltant/tbl_stylists/${formData.id}')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 05:37:31 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;consultant_id&quot; does not exist
+LINE 2: ...0vU7vk0vEYH1EFSnZC6ghnOcu', '5555555554', '[3]', @consultant...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(514): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 05:37:31 --> ErrorException: pg_query(): Query failed: ERROR:  current transaction is aborted, commands ignored until end of transaction block in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT @consult...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT @consult...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT @consult...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(517): CodeIgniter\Database\BaseConnection->query('SELECT @consult...')
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 05:37:31 --> Error: Call to a member function getRow() on bool
+[Method: POST, Route: createcunsltant/tbl_stylists/0]
+in APPPATH\Controllers\Home.php on line 517.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 05:57:01 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(529): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 06:01:37 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 06:02:20 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 06:08:41 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+INFO - 2025-03-31 06:08:41 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$Xk8XncM2PCux./m/JlwUwOV7qUXqDk0LWKjWJQdvDVf6gd66/oq9q, consultant_id: 6
+ERROR - 2025-03-31 06:20:35 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+INFO - 2025-03-31 06:20:35 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$6lKV3hMq5ZHrKpa6p/j6IeAKk3UXfOSROJgtWMIwt6SzNPEvGGZzC, consultant_id: 7
+ERROR - 2025-03-31 06:22:54 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+INFO - 2025-03-31 06:22:54 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$/UwUymspERLhAN6Duq50.usTX.Rzt.F02tmiWbmD6aPX6HmkCXlcO, consultant_id: 8
+ERROR - 2025-03-31 06:24:59 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 06:24:59 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+[Method: POST, Route: read/tbl_stylists]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:24:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:24:59 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, \'[\\[\\]&quot;]\', \'\', \'g\'), \'\'),
+                                     \',\'
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), \'[]\'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = \'N\' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 5 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 06:25:32 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+INFO - 2025-03-31 06:25:32 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$9cGKu5irFyG0VrYimqJoWuQN/3hrI/PFzVBT5emWX1pZhYb9UllOO, consultant_id: 9
+ERROR - 2025-03-31 06:33:40 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;user_ref_code&quot; of relation &quot;tbl_login&quot; does not exist
+LINE 1: ... INTO tbl_login (mobile, password, role_ref_code, user_ref_c...
+                                                             ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+INFO - 2025-03-31 06:33:40 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$SCBK/Hm39rHCnjwVwTMN7OmwcBTcirdLjXvsvSmuz47BBK0gn99uy, consultant_id: 10
+INFO - 2025-03-31 06:40:02 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$QgftBXqbkiGHId2kDFe6C.CaYKnmRNBvAkIpA5C6k3hU/Ru.XOy2a, consultant_id: 11
+INFO - 2025-03-31 06:40:06 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$LQKL5sQP6Ms3ym5Bu8w3vu1Kia6uO6YA0GmFGpB0UUzuhTSRzgYBK, consultant_id: 12
+ERROR - 2025-03-31 06:40:08 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 06:40:08 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+[Method: POST, Route: read/tbl_stylists]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:40:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:40:08 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, \'[\\[\\]&quot;]\', \'\', \'g\'), \'\'),
+                                     \',\'
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), \'[]\'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = \'N\' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 5 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-31 06:43:03 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$VkksoueLfySS8t8/amb21uxnxYRZ/HTekew/EBrjf8ps.4UcSllxW, consultant_id: 13
+INFO - 2025-03-31 06:43:07 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$d66Khxm3ta9LaGlPWwxJe.g2RO1X0Pfj1XbSqcoJCcUjUV4FXISw., consultant_id: 14
+ERROR - 2025-03-31 06:43:09 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 06:43:09 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+[Method: POST, Route: read/tbl_stylists]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:43:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:43:09 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, \'[\\[\\]&quot;]\', \'\', \'g\'), \'\'),
+                                     \',\'
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), \'[]\'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = \'N\' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 5 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 06:43:21 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 06:43:21 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+[Method: POST, Route: read/tbl_stylists]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:43:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 06:43:21 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, '[\[\]&quot;]', '', 'g'), ''),
+                                     ','
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), '[]'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = 'N' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;service1&quot;
+CONTEXT:  SQL statement &quot;
+            SELECT jsonb_agg(row_to_json(t))
+            FROM (
+                SELECT 
+                    s.id, 
+                    s.name, 
+                    s.mobile, 
+                    s.degree, 
+                    s.is_active, 
+                    s.is_deleted, 
+                    s.created_on, 
+                    s.updated_on, 
+                    COALESCE(
+                        (SELECT jsonb_agg(name) 
+                         FROM tbl_servicemst 
+                         WHERE id IN (
+                             SELECT UNNEST(
+                                 string_to_array(
+                                     COALESCE(REGEXP_REPLACE(s.services, \'[\\[\\]&quot;]\', \'\', \'g\'), \'\'),
+                                     \',\'
+                                 )::INTEGER[]
+                             )
+                         )
+                        ), \'[]\'
+                    ) AS service_names
+                FROM tbl_stylists s
+                WHERE s.is_deleted = \'N\' 
+            ) t&quot;
+PL/pgSQL function spreaddata(integer,text) line 39 at EXECUTE', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL spReadData(NULL, \'tbl_stylists\', NULL)')
+ 5 APPPATH\Controllers\Home.php(394): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_stylists')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-31 06:47:15 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$JEckaeHcU.DVTRQeJcTCIekXUaN4NDIq.YYzSiLnqsiAVdn77FRGO, consultant_id: 15
+INFO - 2025-03-31 06:47:19 --> Inserting into tbl_login with mobile: 5555555554, password: $2y$10$Kg7mBhxGLzXPK0nis1yLF.IzfB98KG7fc/9Y6xq95Z7XZr8QKL.HC, consultant_id: 16
+ERROR - 2025-03-31 07:04:50 --> ErrorException: pg_query(): Query failed: ERROR:  operator does not exist: character varying = integer
+LINE 3: WHERE &quot;user_code_ref&quot; = 17
+                              ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts. in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1713): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseBuilder->countAllResults()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-03-31 07:04:50 --> ErrorException: pg_query(): Query failed: ERROR:  current transaction is aborted, commands ignored until end of transaction block in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(538): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 07:09:51 --> ErrorException: pg_query(): Query failed: ERROR:  operator does not exist: character varying = integer
+LINE 3: WHERE &quot;user_code_ref&quot; = 18
+                              ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts. in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 C:\xampp\htdocs\salonClinic\system\Database\BaseBuilder.php(1713): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(531): CodeIgniter\Database\BaseBuilder->countAllResults()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-03-31 07:09:51 --> ErrorException: pg_query(): Query failed: ERROR:  current transaction is aborted, commands ignored until end of transaction block in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO tbl...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO tbl...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO tbl...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(538): CodeIgniter\Database\BaseConnection->query('INSERT INTO tbl...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+INFO - 2025-03-31 07:20:52 --> Inserting into tbl_login with mobile: 5555555554, consultant_id: 19
+INFO - 2025-03-31 07:20:55 --> Inserting into tbl_login with mobile: 5555555554, consultant_id: 20
+INFO - 2025-03-31 08:43:46 --> Inserting into tbl_login with mobile: 5555555554, consultant_id: 21
+INFO - 2025-03-31 08:43:49 --> Inserting into tbl_login with mobile: 5555555554, consultant_id: 22
+INFO - 2025-03-31 09:13:12 --> Calling stored procedure sp_manage_consultant with ID: 0
+INFO - 2025-03-31 09:13:12 --> Stored procedure executed. Consultant ID returned: 0
+INFO - 2025-03-31 09:13:12 --> Inserting into tbl_login with mobile: 5555555554, consultant_id: 23
+INFO - 2025-03-31 09:13:12 --> Inserted into tbl_login successfully for consultant ID: 23
+INFO - 2025-03-31 09:13:16 --> Calling stored procedure sp_manage_consultant with ID: 0
+INFO - 2025-03-31 09:13:16 --> Stored procedure executed. Consultant ID returned: 0
+INFO - 2025-03-31 09:13:16 --> Inserting into tbl_login with mobile: 5555555554, consultant_id: 24
+INFO - 2025-03-31 09:13:17 --> Inserted into tbl_login successfully for consultant ID: 24
+CRITICAL - 2025-03-31 09:40:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "tbl_stylists{}"
+[Method: POST, Route: createConsultant/tbl_stylists%7B%7D]
+in SYSTEMPATH\Router\Router.php on line 736.
+ 1 SYSTEMPATH\Router\Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('createConsultant/tbl_stylists{}')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('createConsultant/tbl_stylists{}')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-31 10:00:02 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "tbl_sty;lists"
+[Method: POST, Route: createConsultant/tbl_sty;lists/0]
+in SYSTEMPATH\Router\Router.php on line 736.
+ 1 SYSTEMPATH\Router\Router.php(203): CodeIgniter\Router\Router->checkDisallowedChars('createConsultant/tbl_sty;lists/0')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('createConsultant/tbl_sty;lists/0')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 11:09:20 --> ErrorException: pg_query(): Query failed: ERROR:  procedure sp_manage_login(unknown, unknown, unknown, record, unknown) does not exist
+LINE 1: CALL sp_manage_login('5555555554', '$2y$10$CoIzG/HgI2cO7pDkY...
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts. in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(570): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createLoginEntry()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 11:17:05 --> ErrorException: pg_query(): Query failed: ERROR:  procedure sp_manage_login(unknown, unknown, unknown, record, unknown) does not exist
+LINE 1: CALL sp_manage_login('5555555554', '$2y$10$Ejyahv6GZvpjsRmN....
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts. in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(570): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createLoginEntry()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 11:37:43 --> ErrorException: pg_query(): Query failed: ERROR:  relation &quot;tbl_stylists_id_seq&quot; does not exist
+LINE 1: SELECT currval('tbl_stylists_id_seq') AS id
+                       ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT currval(...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT currval(...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT currval(...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(518): CodeIgniter\Database\BaseConnection->query('SELECT currval(...')
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 11:37:43 --> Error: Call to a member function getRow() on bool
+[Method: POST, Route: createConsultant/tbl_stylists/0]
+in APPPATH\Controllers\Home.php on line 519.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 12:23:35 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;Rohit&quot;
+LINE 1: CALL sp_manage_consultant('Rohit', 'B.Com', '$2y$10$sA3NC8Y6...
+                                  ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(514): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 12:23:35 --> ErrorException: pg_query(): Query failed: ERROR:  current transaction is aborted, commands ignored until end of transaction block in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT currval(...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT currval(...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT currval(...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(517): CodeIgniter\Database\BaseConnection->query('SELECT currval(...')
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 12:23:35 --> Error: Call to a member function getRow() on bool
+[Method: POST, Route: createConsultant/tbl_stylists/0]
+in APPPATH\Controllers\Home.php on line 518.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-31 12:28:15 --> ErrorException: pg_query(): Query failed: ERROR:  invalid input syntax for type integer: &quot;Rohit&quot;
+LINE 1: CALL sp_manage_consultant('Rohit', 'B.Com', '$2y$10$KwaRrWFa...
+                                  ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(514): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-03-31 12:28:16 --> ErrorException: pg_query(): Query failed: ERROR:  current transaction is aborted, commands ignored until end of transaction block in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT currval(...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT currval(...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT currval(...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(517): CodeIgniter\Database\BaseConnection->query('SELECT currval(...')
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-03-31 12:28:16 --> Error: Call to a member function getRow() on bool
+[Method: POST, Route: createConsultant/tbl_stylists/0]
+in APPPATH\Controllers\Home.php on line 518.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createConsultant('tbl_stylists', '0')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

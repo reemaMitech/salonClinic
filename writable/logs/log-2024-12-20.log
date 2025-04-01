@@ -1,0 +1,364 @@
+DEBUG - 2024-12-20 04:44:43 --> Received data: Array
+(
+    [systolic] => 120
+    [diastolic] => 80
+    [fasting] => 90
+    [pp] => 110
+    [weight] => 63
+    [bmi] => 7.5
+    [illness] => tse
+    [symptoms] => tser
+    [treatment] => fdtss
+    [followUpDate] => 2024-12-20
+    [fees] => 1000
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+DEBUG - 2024-12-20 04:44:43 --> Appointment ID: 48
+DEBUG - 2024-12-20 04:44:43 --> Fees: 1000
+DEBUG - 2024-12-20 11:36:44 --> Received data: Array
+(
+    [issueDate] => 2024-12-20
+    [startDate] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qwqweqe
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+CRITICAL - 2024-12-20 11:36:45 --> ErrorException: Undefined array key ""
+[Method: POST, Route: certificate]
+in APPPATH\Controllers\Home.php on line 2664.
+ 1 APPPATH\Controllers\Home.php(2664): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key ""', 'C:\\xampp\\htdocs\\OPDClinic\\app\\Controllers\\Home.php', 2664)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-20 11:45:10 --> Received data: Array
+(
+    [issueDate] => 2024-12-20
+    [startDate] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qwqweqe
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+DEBUG - 2024-12-20 11:45:10 --> Appointment ID: 48
+ERROR - 2024-12-20 11:45:12 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-20 11:45:12 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^
+[Method: POST, Route: certificate]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issueDate:, :startDate:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 11:45:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qwqweqe\', 48, \'2024-12-20\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qwqweqe\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issueDate:, :startDate:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 11:45:12 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qwqweqe\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qwqweqe\', 48, \'2024-12-20\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qwqweqe\', 48, \'2024-12-20\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issueDate:, :startDate:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 6 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-20 11:51:29 --> Received data: Array
+(
+    [issueDate] => 2024-12-20
+    [startDate] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qeqweewq
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+DEBUG - 2024-12-20 11:51:29 --> Appointment ID: 48
+ERROR - 2024-12-20 11:51:31 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-20 11:51:31 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^
+[Method: POST, Route: certificate]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issueDate:, :startDate:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 11:51:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qeqweewq\', 48, \'2024-12-20\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qeqweewq\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issueDate:, :startDate:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 11:51:31 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;issueDate&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issueDate&quot;, &quot;startDate&quot;, &quot;to...
+                                       ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qeqweewq\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qeqweewq\', 48, \'2024-12-20\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qeqweewq\', 48, \'2024-12-20\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issueDate", "startDate", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issueDate:, :startDate:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 6 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-20 12:03:50 --> Received data: Array
+(
+    [issue_date] => 2024-12-20
+    [start_date] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qewqewqeqw
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+ERROR - 2024-12-20 12:03:50 --> Missing keys in request data
+DEBUG - 2024-12-20 12:03:50 --> Appointment ID: 48
+ERROR - 2024-12-20 12:03:52 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;start_date&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issue_date&quot;, &quot;start_date&quot;, &quot;...
+                                                     ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-20 12:03:52 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;start_date&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issue_date&quot;, &quot;start_date&quot;, &quot;...
+                                                     ^
+[Method: POST, Route: certificate]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issue_date:, :start_date:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 12:03:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;start_date&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issue_date&quot;, &quot;start_date&quot;, &quot;...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issue_date:, :start_date:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 12:03:52 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;start_date&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issue_date&quot;, &quot;start_date&quot;, &quot;...
+                                                     ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;start_date&quot; of relation &quot;tbl_certificate&quot; does not exist
+LINE 1: INSERT INTO &quot;tbl_certificate&quot; (&quot;issue_date&quot;, &quot;start_date&quot;, &quot;...
+                                                     ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issue_date:, :start_date:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 6 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-20 12:07:17 --> Received data: Array
+(
+    [issue_date] => 2024-12-20
+    [start_date] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qewqewqeqw
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+ERROR - 2024-12-20 12:07:17 --> Missing keys in request data
+DEBUG - 2024-12-20 12:07:17 --> Appointment ID: 48
+ERROR - 2024-12-20 12:07:20 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;id&quot; of relation &quot;tbl_certificate&quot; violates not-null constraint
+DETAIL:  Failing row contains (null, 48, 2024-12-20, 2024-12-20, 2024-12-02, 5, qewqewqeqw, null, null, null, null). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-20 12:07:20 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  null value in column &quot;id&quot; of relation &quot;tbl_certificate&quot; violates not-null constraint
+DETAIL:  Failing row contains (null, 48, 2024-12-20, 2024-12-20, 2024-12-02, 5, qewqewqeqw, null, null, null, null).
+[Method: POST, Route: certificate]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issue_date:, :start_date:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 12:07:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  null value in column &quot;id&quot; of relation &quot;tbl_certificate&quot; violates not-null constraint
+DETAIL:  Failing row contains (null, 48, 2024-12-20, 2024-12-20, 2024-12-02, 5, qewqewqeqw, null, null, null, null).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issue_date:, :start_date:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-20 12:07:20 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;id&quot; of relation &quot;tbl_certificate&quot; violates not-null constraint
+DETAIL:  Failing row contains (null, 48, 2024-12-20, 2024-12-20, 2024-12-02, 5, qewqewqeqw, null, null, null, null).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  null value in column &quot;id&quot; of relation &quot;tbl_certificate&quot; violates not-null constraint
+DETAIL:  Failing row contains (null, 48, 2024-12-20, 2024-12-20, 2024-12-02, 5, qewqewqeqw, null, null, null, null).', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (\'2024-12-20\', \'2024-12-02\', \'5\', \'qewqewqeqw\', 48, \'2024-12-20\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_certificate" ("issue_date", "start_date", "total_leave_days", "diagnosis", "appointment_id", "record_date") VALUES (:issue_date:, :start_date:, :total_leave_days:, :diagnosis:, :appointment_id:, :record_date:)', [...], false)
+ 6 APPPATH\Controllers\Home.php(2685): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_certifate_details()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-20 12:19:07 --> Received data: Array
+(
+    [issue_date] => 2024-12-20
+    [start_date] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qewqewqeqw
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+ERROR - 2024-12-20 12:19:07 --> Missing keys in request data
+DEBUG - 2024-12-20 12:19:07 --> Appointment ID: 48
+DEBUG - 2024-12-20 12:22:32 --> Received data: Array
+(
+    [issue_date] => 2024-12-20
+    [start_date] => 2024-12-02
+    [total_leave_days] => 5
+    [diagnosis] => qewqewqeqw
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+ERROR - 2024-12-20 12:22:32 --> Missing keys in request data
+DEBUG - 2024-12-20 12:22:32 --> Appointment ID: 48
+DEBUG - 2024-12-20 12:30:28 --> Received data: Array
+(
+    [issue_date] => 2024-12-20
+    [start_date] => 2024-12-16
+    [total_leave_days] => 10
+    [diagnosis] => test
+    [appointment_id] => 48
+    [record_date] => 2024-12-20
+)
+
+ERROR - 2024-12-20 12:30:28 --> Missing keys in request data
+DEBUG - 2024-12-20 12:30:28 --> Appointment ID: 48

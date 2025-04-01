@@ -1,0 +1,1824 @@
+ERROR - 2024-10-23 06:47:04 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:47:04 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:47:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:47:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:47:14 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:47:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:49:36 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:49:36 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:49:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:55:33 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:55:33 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:55:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:58:19 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:58:19 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:58:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:58:24 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:58:24 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:58:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:58:59 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:58:59 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:58:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:59:08 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:59:08 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:59:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:59:10 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:59:10 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:59:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:59:17 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:59:17 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:59:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 06:59:48 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 06:59:48 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 06:59:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:03:32 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:03:32 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:03:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:06:33 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:06:33 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:06:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:17:55 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:17:55 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:17:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:18:22 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:18:22 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:18:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:18:25 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:18:25 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:18:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:19:12 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:19:12 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:19:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:19:15 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:19:15 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:19:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:19:26 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:19:26 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:19:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:20:54 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:20:54 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:20:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:22:51 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:22:51 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:22:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 07:23:56 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 07:23:56 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 07:23:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:47:09 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:47:09 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:47:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:47:52 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:47:52 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:47:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:47:59 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:47:59 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:47:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:06 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:06 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:16 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:16 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:17 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:17 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:27 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:27 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:37 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:37 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:42 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:42 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:48:52 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:48:52 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:48:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:50:50 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:50:50 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:50:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:57:04 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:57:04 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:57:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:57:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:57:14 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:57:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:57:28 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:57:28 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:57:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:58:04 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:58:04 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:58:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 08:59:13 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 08:59:13 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 08:59:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:00:24 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:00:24 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:00:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:07:39 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:07:39 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:07:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:09:01 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:09:01 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:09:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:09:04 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:09:04 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:09:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:09:08 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:09:08 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:09:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:09:11 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:09:11 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:09:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:13:39 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:13:39 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:13:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:13:43 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:13:43 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:13:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:14:18 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:14:18 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:14:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:20:11 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:20:11 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:20:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:20:13 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:20:13 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:20:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:20:22 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:20:22 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:20:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:20:25 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:20:25 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:20:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:20:28 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:20:28 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:20:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:20:35 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:20:35 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:20:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:24:50 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:24:50 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:24:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 09:25:50 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 09:25:50 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 09:25:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 12:08:34 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: Timeout error [258].  SQLSTATE: 08001, code: 258
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]Unable to complete login process due to delay in login response SQLSTATE: 08001, code: 258 in C:\xampp\htdocs\OPDClinic\system\Database\SQLSRV\Connection.php:144
+Stack trace:
+#0 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\OPDClinic\system\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#3 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+#4 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_menu')
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-10-23 12:08:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: Timeout error [258].  SQLSTATE: 08001, code: 258
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]Unable to complete login process due to delay in login response SQLSTATE: 08001, code: 258
+[Method: GET, Route: read/tbl_menu]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_menu"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_menu')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-10-23 12:39:45 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+CRITICAL - 2024-10-23 12:39:45 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+[Method: GET, Route: read/tbl_employee]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 2 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-10-23 12:39:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'OPDclinic.dbo.tbl_employee'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = \'N\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "OPDclinic"."dbo"."tbl_employee"
+WHERE "is_deleted" = :is_deleted:', [...], false)
+ 4 APPPATH\Controllers\Home.php(153): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_employee')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

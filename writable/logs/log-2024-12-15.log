@@ -1,0 +1,69 @@
+ERROR - 2024-12-15 17:29:32 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_reg...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(532): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->getempy('tbl_register')
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-15 17:29:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+[Method: GET, Route: getempy/tbl_register]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_register".*, "tbl_section"."section_name"
+FROM "tbl_register"
+LEFT JOIN "tbl_section" ON "tbl_section"."id" = "tbl_register"."section"
+WHERE "tbl_register"."is_deleted" = :tbl_register.is_deleted:
+AND   (
+"tbl_register"."role" = :tbl_register.role:
+OR "tbl_register"."role" = :tbl_register.role.1:
+ )', [...], false)
+ 3 APPPATH\Controllers\Home.php(532): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getempy('tbl_register')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-12-15 17:29:32 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(273): CodeIgniter\Database\BaseConnection->query('CALL spReadData...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->read('tbl_section')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-12-15 17:29:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+[Method: GET, Route: read/tbl_section]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\Home.php(273): CodeIgniter\Database\BaseConnection->query('CALL spReadData(NULL, ?, ?)', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->read('tbl_section')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

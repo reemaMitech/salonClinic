@@ -1,0 +1,492 @@
+ERROR - 2025-04-01 04:20:14 --> ErrorException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL get_pendin...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL get_pendin...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL get_pendin...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pendin...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-04-01 04:20:14 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement
+[Method: GET, Route: get_pending_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-01 04:20:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL get_pending_appointments(NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL get_pending_appointments(NULL)')
+ 3 APPPATH\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-01 04:20:14 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     \'price\', COALESCE(s.&quot;Price&quot;, \'\')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            \'status\', 200,
+            \'message\', \'Pending appointments retrieved successfully\',
+            \'data\', jsonb_agg(
+                jsonb_build_object(
+                    \'id\', a.id,
+                    \'branch\', a.branch,
+                    \'consultant\', a.consultant,
+                    \'section\', a.section,
+                    \'slot\', a.slot,
+                    \'appointment_status\', a.appointment_status,
+                    \'slots_time\', s.slots_time,
+                    \'price\', COALESCE(s.&quot;Price&quot;, \'\')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    \'branch_name\', b.branch_name,
+                    \'consultant_name\', r.name,
+                    \'section_name\', sec.section_name,
+                    \'full_name\', a.full_name,
+                    \'mobile_no\', a.mobile_no,
+                    \'email_id\', a.email_id,
+                    \'locations\', a.locations,
+                    \'startdate\', a.startdate,
+                    \'dates\', a.dates,  -- Include \'dates\' column
+                    \'created_at\', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = \'N\'
+    AND a.appointment_status = \'PE\'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL get_pending_appointments(NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL get_pending_appointments(NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL get_pending_appointments(NULL)')
+ 5 APPPATH\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-01 04:44:43 --> ErrorException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL get_pendin...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL get_pendin...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL get_pendin...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pendin...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-04-01 04:44:43 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement
+[Method: GET, Route: get_pending_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-01 04:44:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL get_pending_appointments(NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL get_pending_appointments(NULL)')
+ 3 APPPATH\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-01 04:44:43 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     'price', COALESCE(s.&quot;Price&quot;, '')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            'status', 200,
+            'message', 'Pending appointments retrieved successfully',
+            'data', jsonb_agg(
+                jsonb_build_object(
+                    'id', a.id,
+                    'branch', a.branch,
+                    'consultant', a.consultant,
+                    'section', a.section,
+                    'slot', a.slot,
+                    'appointment_status', a.appointment_status,
+                    'slots_time', s.slots_time,
+                    'price', COALESCE(s.&quot;Price&quot;, '')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    'branch_name', b.branch_name,
+                    'consultant_name', r.name,
+                    'section_name', sec.section_name,
+                    'full_name', a.full_name,
+                    'mobile_no', a.mobile_no,
+                    'email_id', a.email_id,
+                    'locations', a.locations,
+                    'startdate', a.startdate,
+                    'dates', a.dates,  -- Include 'dates' column
+                    'created_at', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = 'N'
+    AND a.appointment_status = 'PE'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column s.Price does not exist
+LINE 13:                     \'price\', COALESCE(s.&quot;Price&quot;, \'\')::text, ...
+                                               ^
+HINT:  Perhaps you meant to reference the column &quot;s.price&quot;.
+QUERY:  SELECT jsonb_build_object(
+            \'status\', 200,
+            \'message\', \'Pending appointments retrieved successfully\',
+            \'data\', jsonb_agg(
+                jsonb_build_object(
+                    \'id\', a.id,
+                    \'branch\', a.branch,
+                    \'consultant\', a.consultant,
+                    \'section\', a.section,
+                    \'slot\', a.slot,
+                    \'appointment_status\', a.appointment_status,
+                    \'slots_time\', s.slots_time,
+                    \'price\', COALESCE(s.&quot;Price&quot;, \'\')::text,  -- Use &quot;Price&quot; with quotes for case-sensitivity
+                    \'branch_name\', b.branch_name,
+                    \'consultant_name\', r.name,
+                    \'section_name\', sec.section_name,
+                    \'full_name\', a.full_name,
+                    \'mobile_no\', a.mobile_no,
+                    \'email_id\', a.email_id,
+                    \'locations\', a.locations,
+                    \'startdate\', a.startdate,
+                    \'dates\', a.dates,  -- Include \'dates\' column
+                    \'created_at\', a.created_at
+                )
+            )
+    )
+                         FROM tbl_appointment a
+    LEFT JOIN tbl_slots s ON CAST(a.slot AS INTEGER) = s.id
+    LEFT JOIN tbl_register r ON a.consultant = r.id
+    LEFT JOIN tbl_branch b ON a.branch = b.id
+    LEFT JOIN tbl_section sec ON a.section = sec.id
+    WHERE a.is_deleted = \'N\'
+    AND a.appointment_status = \'PE\'  -- Only pending appointments
+    AND a.dates &lt;= CURRENT_DATE
+CONTEXT:  PL/pgSQL function get_pending_appointments() line 4 at SQL statement', 'C:\\xampp\\htdocs\\salonClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL get_pending_appointments(NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL get_pending_appointments(NULL)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL get_pending_appointments(NULL)')
+ 5 APPPATH\Controllers\Home.php(1763): CodeIgniter\Database\BaseConnection->query('CALL get_pending_appointments(?)', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getPendingAppointments()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-04-01 04:51:50 --> ErrorException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;,&quot;
+LINE 1: CALL sp_manage_login(?, ?, ?, ?, ?)
+                              ^ in C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\salonClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\salonClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\salonClinic\app\Controllers\Home.php(573): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(933): App\Controllers\Home->createLoginEntry()
+#6 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\salonClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\salonClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\salonClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\salonClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
