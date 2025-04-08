@@ -170,33 +170,55 @@ public function authenticate()
             'message' => 'Your subscription has ended.'
         ])->setStatusCode(403);
     }
-    $user = $this->db->table('tbl_register')
+    $user = $this->db->table('tbl_login')
              ->where('mobile', $mobile)
-             ->where('is_deleted', 'N')
+             ->where('is_active', 'Y')
              ->get()
              ->getRowArray();
+    // print_r($user);exit();
     if (!$user || !password_verify($password, $user['password'])) {
         return $this->response->setJSON([
             'status' => 401,
             'message' => 'Invalid mobile number or password.'
         ])->setStatusCode(401);
     }
+
+      // Initialize access levels
+    $accessLevels = [];
+
+    if ($user['role_ref_code'] === 'STL') {
+        $stylistData = $this->db->table('tbl_stylists')
+            ->where('id', $user['user_code_ref'])
+            ->where('is_active', 'Y')
+            ->where('is_deleted', 'N')
+            ->get()
+            ->getRowArray();
+
+        if ($stylistData) {
+            $accessLevels = json_decode($stylistData['access_levels'], true); // Convert string to array
+        }
+    }
+        // print_r($accessLevels);exit();
     $payload = [
         'iat' => time(),
         'exp' => time() + (2 * 60),
         'user_id' => $user['id'],
-        'name' => $user['name'],
+        // 'name' => $user['name'],
         'mobile' => $user['mobile'],
-        'role' => $user['role']
+        'role_ref_code' => $user['role_ref_code']
     ];
     $token = JWT::encode($payload, $this->key, 'HS256');
-    return $this->response->setJSON([
+
+     // Prepare response data
+     return $this->response->setJSON([
         'userid' => $user['id'],
         'status' => 200,
         'message' => 'Authentication successful',
         'token' => $token,
-        'role' => $user['role']
+        'role_ref_code' => $user['role_ref_code'],
+        'access_levels' => $accessLevels
     ])->setStatusCode(200);
+
 }
     // Verify JWT token
     public function verifyToken()
@@ -264,12 +286,12 @@ public function authenticate()
     
         // Extract branch and service ID
         $branchId = isset($data['schedules'][0]['branch']) ? $data['schedules'][0]['branch'] : null;
-        $serviceId = isset($data['service_id']) ? $data['service_id'] : null; 
+        // $serviceId = isset($data['service_id']) ? $data['service_id'] : null; 
     
-        if (!$branchId || !$serviceId) {
+        if (!$branchId ) {
             return $this->response->setJSON([
                 'status' => 400,
-                'message' => 'Branch ID and Service ID are required.'
+                'message' => 'Branch ID is required.'
             ])->setStatusCode(400);
         }
     
@@ -287,7 +309,7 @@ public function authenticate()
                 'start_time' => $schedule['startTime'],
                 'end_time' => $schedule['endTime'],
                 'branch_id' => $branchId,
-                'service_id' => $serviceId,
+                // 'service_id' => $serviceId,
                 'day_name' => $schedule['day'],
                 'buffer_time' => $bufferTime,
                 'price' => $price,
@@ -311,7 +333,7 @@ public function authenticate()
                     'slots_time' => $slot,
                     'day_name' => $schedule['day'],
                     'branch_id' => $branchId,
-                    'service_id' => $serviceId,
+                    // 'service_id' => $serviceId,
                     'slotcount' => $slotCount,
                     'price' => $price,
                     'schedule_id' => $scheduleId
@@ -500,44 +522,48 @@ public function create($table)
         $db = \Config\Database::connect();
         $db->transStart();
     
+        $consultantId = isset($input->id) && !empty($input->id) ? (int)$input->id : 0;
         $name = $input->name ?? '';
         $degree = $input->degree ?? '';
-        $password = password_hash($input->password, PASSWORD_BCRYPT);
+        $password = isset($input->password) ? password_hash($input->password, PASSWORD_BCRYPT) : null;
         $mobile = $input->mobile ?? '';
         $services = json_encode($input->services ?? []);
-        
     
-        // ✅ Initialize consultant ID
-        $consultantId = 0;
+        if ($consultantId > 0) {
+            // Update existing consultant
+            $db->query("CALL sp_manage_consultant(?, ?, ?, ?, ?, ?)", [
+                $consultantId, $name, $degree, $password, $mobile, $services
+            ]);
+        } else {
+            // Insert new consultant
+            $db->query("CALL sp_manage_consultant(?, ?, ?, ?, ?, ?)", [
+                &$consultantId, $name, $degree, $password, $mobile, $services
+            ]);
     
-        // ✅ Execute stored procedure
-        $db->query("CALL sp_manage_consultant(?, ?, ?, ?, ?, ?)", [
-            &$consultantId, $name, $degree, $password, $mobile, $services
-        ]);
-    
-        // ✅ Fetch the last inserted consultant ID
-        $query = $db->query("SELECT currval('tbl_consultants_id_seq') AS id");
-        $row = $query->getRow();
-    
-        if ($row && isset($row->id)) {
-            $consultantId = $row->id;
+            // Fetch the last inserted consultant ID
+            $query = $db->query("SELECT currval('tbl_consultants_id_seq') AS id");
+            $row = $query->getRow();
+            if ($row && isset($row->id)) {
+                $consultantId = $row->id;
+            }
         }
     
         $db->transComplete();
     
-        if ($db->transStatus() === false || !$consultantId) {
+        if ($db->transStatus() === false) {
             return $this->response->setJSON([
                 'status' => 500,
-                'message' => 'Error retrieving consultant ID.'
+                'message' => 'Error processing consultant data.'
             ])->setStatusCode(500);
         }
     
         return $this->response->setJSON([
             'status' => 200,
-            'message' => 'Consultant created successfully.',
+            'message' => $consultantId > 0 ? 'Consultant updated successfully.' : 'Consultant created successfully.',
             'consultant_id' => $consultantId
         ]);
     }
+    
     
     
     
@@ -735,10 +761,10 @@ public function fetchslots()
         {
             try {
                 $builder = $this->db->table('tbl_register')
-                    ->select('tbl_register.id as con_id, tbl_register.degree, tbl_register.role, tbl_register.name, tbl_register.section,tbl_register.mobile,tbl_register.password, tbl_section.section_name') // Selecting the section_name
+                    ->select('tbl_register.id as con_id, tbl_register.degree, tbl_register.role_ref_code, tbl_register.name, tbl_register.section,tbl_register.mobile,tbl_register.password, tbl_section.section_name') // Selecting the section_name
                     ->join('tbl_section', 'tbl_section.id = tbl_register.section', 'left') // Join to get section_name
                     ->where('tbl_register.is_deleted', 'N')
-                    ->where('tbl_register.role', 'Consultant');
+                    ->where('tbl_register.role_ref_code', 'Consultant');
 
                 
                 $result = $builder->get()->getResultArray();
@@ -773,8 +799,8 @@ public function getempy()
             ->join('tbl_section', 'tbl_section.id = tbl_register.section', 'left') // Join to get section_name
             ->where('tbl_register.is_deleted', 'N')
             ->groupStart() // Start grouping conditions
-                ->where('tbl_register.role', 'Employee')
-                ->orWhere('tbl_register.role', 'Admin')
+                ->where('tbl_register.role_ref_code', 'Employee')
+                ->orWhere('tbl_register.role_ref_code', 'Admin')
             ->groupEnd(); // End grouping conditions
 
         $result = $builder->get()->getResultArray();
@@ -1275,7 +1301,7 @@ public function getslots($table)
                 $this->db->escape($_POST['address']),
                 $password !== null ? $this->db->escape($password) : 'NULL', // Pass NULL if no password is provided
                 $this->db->escape($_POST['joiningDate']),
-                $this->db->escape($_POST['role']),
+                $this->db->escape($_POST['role_ref_code']),
                 $this->db->escape($_POST['accessLevels']),
                 $this->db->escape($resumeFileName)
             );
@@ -1874,18 +1900,18 @@ public function fetchslotsforcustome()
         'data' => array_values($filtered_slots) 
     ])->setStatusCode(200);
 }
-  public function get_where_condition_data($table, $role)
+  public function get_where_condition_data($table, $role_ref_code)
 {
     // echo "hiii";
-    // echo $role; // This should now output the role value
+    // echo $role_ref_code; // This should now output the role_ref_code value
     // exit();
 
     try {
         $builder = $this->db->table($table);
 
         // Apply the custom where condition if provided
-        if (!empty($role)) {
-            $builder->where('role', $role);
+        if (!empty($role_ref_code)) {
+            $builder->where('role_ref_code', $role_ref_code);
         }
 
         // Add the is_deleted condition
@@ -2312,11 +2338,11 @@ public function readAppointments($id = null)
 {
     $data = $this->request->getJSON(true);
     $id = isset($data['id']) ? $data['id'] : null;
-    $role = isset($data['role']) ? $data['role'] : null;
-    // print_r($role);die;
+    $role_ref_code = isset($data['role_ref_code']) ? $data['role_ref_code'] : null;
+    // print_r($role_ref_code);die;
     try {
         $db = \Config\Database::connect();
-        if ($role =='Consultant') {
+        if ($role_ref_code =='Consultant') {
             $query = $db->query("CALL spReadAppointments(?, ?)", [$id, NULL]);
         } else {
             $query = $db->query("CALL spReadAppointments(NULL, ?)", [NULL]); 
@@ -2344,6 +2370,47 @@ public function readAppointments($id = null)
     }
 }
 
+// public function getUserDetails($userId)
+// {
+//     // Get token from the request headers
+//     $authHeader = $this->request->getHeader('Authorization');
+//     $token = $authHeader ? $authHeader->getValue() : '';
+
+//     if (!$token) {
+//         return $this->response->setJSON([
+//             'status' => 401,
+//             'message' => 'Token missing'
+//         ])->setStatusCode(401);
+//     }
+
+//     try {
+//         $user = $this->db->table('tbl_register')
+//                  ->where('id', $userId)
+//                  ->get()
+//                  ->getRowArray();
+
+//         if ($user) {
+//             return $this->response->setJSON([
+//                 'status' => 200,
+//                 'user' => $user
+//             ])->setStatusCode(200);
+//         } else {
+//             return $this->response->setJSON([
+//                 'status' => 404,
+//                 'message' => 'User not found'
+//             ])->setStatusCode(404);
+//         }
+
+//     } catch (Exception $e) {
+//         // Log the error to help with debugging
+//         log_message('error', 'Error: ' . $e->getMessage());
+//         return $this->response->setJSON([
+//             'status' => 500,
+//             'message' => 'Internal Server Error'
+//         ])->setStatusCode(500);
+//     }
+// }
+
 public function getUserDetails($userId)
 {
     // Get token from the request headers
@@ -2358,22 +2425,37 @@ public function getUserDetails($userId)
     }
 
     try {
+        // Fetch user details from tbl_register
         $user = $this->db->table('tbl_register')
                  ->where('id', $userId)
                  ->get()
                  ->getRowArray();
 
-        if ($user) {
-            return $this->response->setJSON([
-                'status' => 200,
-                'user' => $user
-            ])->setStatusCode(200);
-        } else {
+        if (!$user) {
             return $this->response->setJSON([
                 'status' => 404,
                 'message' => 'User not found'
             ])->setStatusCode(404);
         }
+
+        // If user is a stylist (STL), fetch data from tbl_stylists
+        if ($user['role_ref_code'] === 'STL') {
+            $stylistData = $this->db->table('tbl_stylists')
+                ->where('id', $user['user_code_ref']) // Ensure user_code_ref exists
+                ->where('is_active', 'Y')
+                ->where('is_deleted', 'N')
+                ->get()
+                ->getRowArray();
+
+            if ($stylistData) {
+                $user['access_levels'] = json_decode($stylistData['access_levels'], true); // Convert to array
+            }
+        }
+
+        return $this->response->setJSON([
+            'status' => 200,
+            'user' => $user
+        ])->setStatusCode(200);
 
     } catch (Exception $e) {
         // Log the error to help with debugging
@@ -2384,6 +2466,7 @@ public function getUserDetails($userId)
         ])->setStatusCode(500);
     }
 }
+
 
 
 public function canceledshedule($table, $id)
