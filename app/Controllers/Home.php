@@ -356,9 +356,58 @@ public function authenticate()
     
 
 //     public function create($table)
+// public function create($table)
+// {
+//     $input = $this->request->getJSON();
+
+//     if (empty($input)) {
+//         return $this->response->setJSON([
+//             'status' => 400,
+//             'message' => 'No data provided.'
+//         ])->setStatusCode(400);
+//     }
+
+//     // Convert input to an array
+//     $data = (array) $input;
+
+//     log_message('debug', 'Received Data in create(): ' . json_encode($data));
+
+
+//     // Check if inserting into 'tbl_register' and hash the password
+//     if ($table === 'tbl_register') {
+//         if (isset($data['password'])) {
+//             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+//         }
+
+//         // Assign default access levels if not provided
+//         if (!isset($data['access_levels'])) {
+//             $data['access_levels'] = [4,5,7,9,10,11,12,13,14,15,1]; 
+//         }
+//     }
+
+//     // Convert modified data to JSON string
+//     $jsonData = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+
+//     // Execute stored procedure
+//     $query = $this->db->query("CALL dynamic_insert(?, ?::jsonb)", [$table, $jsonData]);
+
+//     if ($query) {
+//         return $this->response->setJSON([
+//             'status' => 201,
+//             'message' => 'Record created successfully'
+//         ])->setStatusCode(201);
+//     }
+
+//     return $this->response->setJSON([
+//         'status' => 500,
+//         'message' => 'Record creation failed'
+//     ])->setStatusCode(500);
+// }
+
 public function create($table)
 {
-    $input = $this->request->getJSON();
+    $input = $this->request->getJSON(true); // Get data as associative array
 
     if (empty($input)) {
         return $this->response->setJSON([
@@ -385,11 +434,14 @@ public function create($table)
         }
     }
 
-    // Convert modified data to JSON string
-    $jsonData = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
+    // Convert input to JSON string (direct JSONB format for PostgreSQL)
+    $jsonData = json_encode($input, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    // Execute stored procedure
+    // Debugging logs
+    log_message('debug', "Insert Data: " . $jsonData);
+
+    // Call the stored procedure
     $query = $this->db->query("CALL dynamic_insert(?, ?::jsonb)", [$table, $jsonData]);
 
     if ($query) {
@@ -404,6 +456,15 @@ public function create($table)
         'message' => 'Record creation failed'
     ])->setStatusCode(500);
 }
+
+
+
+
+
+
+
+
+
 
 
     public function read($table, $id = null)
@@ -641,6 +702,41 @@ public function createLoginEntry()
 
     
     
+        // public function update($table, $id)
+        // {
+        //     $input = json_decode(file_get_contents('php://input'), true);
+        
+        //     if (!is_array($input) || empty($input)) {
+        //         return $this->response->setJSON([
+        //             'status' => 400,
+        //             'message' => 'No valid input data provided'
+        //         ])->setStatusCode(400);
+        //     }
+        
+        //     if (isset($input[0]) && is_array($input[0])) {
+        //         $input = $input[0]; 
+        //     }
+        
+        //     // Prepare the JSON data to be passed to the stored procedure
+        //     $jsonData = json_encode($input);
+        
+        //     // Call the dynamic_update stored procedure
+        //     $db = \Config\Database::connect();
+        //     try {
+        //         $db->query("CALL dynamic_update(?, ?::jsonb, ?)", [$table, $jsonData, $id]);
+        //         return $this->response->setJSON([
+        //             'status' => 200,
+        //             'message' => 'Record updated successfully'
+        //         ])->setStatusCode(200);
+        //     } catch (\Exception $e) {
+        //         return $this->response->setJSON([
+        //             'status' => 500,
+        //             'message' => 'Record update failed: ' . $e->getMessage()
+        //         ])->setStatusCode(500);
+        //     }
+        // }
+      
+
         public function update($table, $id)
         {
             $input = json_decode(file_get_contents('php://input'), true);
@@ -656,13 +752,26 @@ public function createLoginEntry()
                 $input = $input[0]; 
             }
         
-            // Prepare the JSON data to be passed to the stored procedure
-            $jsonData = json_encode($input);
-        
-            // Call the dynamic_update stored procedure
             $db = \Config\Database::connect();
+        
             try {
-                $db->query("CALL dynamic_update('$table', '$jsonData'::jsonb, $id)");
+                // Identify fields that should be stored as PostgreSQL arrays
+                $arrayFields = ['chair_ids', 'bed_ids']; // Add more field names if needed
+        
+                foreach ($arrayFields as $field) {
+                    if (isset($input[$field]) && is_array($input[$field])) {
+                        // Convert array to PostgreSQL format: {C1,C2} instead of ["C1","C2"]
+                        $input[$field] = '{' . implode(',', $input[$field]) . '}';
+                    }
+                }
+        
+                // Convert full input data to JSON
+                $jsonData = json_encode($input, JSON_UNESCAPED_UNICODE);
+        
+                // Execute the stored procedure
+                $query = "CALL dynamic_update(?, CAST(? AS jsonb), ?)";
+                $db->query($query, [$table, $jsonData, $id]);
+        
                 return $this->response->setJSON([
                     'status' => 200,
                     'message' => 'Record updated successfully'
@@ -674,7 +783,9 @@ public function createLoginEntry()
                 ])->setStatusCode(500);
             }
         }
-      
+        
+        
+
         private function getTableColumns($table)
         {
             return $this->db->getFieldNames($table);
@@ -701,7 +812,6 @@ public function fetchslots()
     $rawInput = file_get_contents('php://input');
     $input = json_decode($rawInput, true); 
     $selected_date = $input['selected_date'];
-    $doctor_id = $input['doctor_id'];
     $branch_id = $input['branch_id'];
     $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
     $timezone = new DateTimeZone('Asia/Kolkata');
@@ -709,6 +819,7 @@ public function fetchslots()
     $current_date = $current_time->format('Y-m-d');
     $is_today = ($selected_date === $current_date);
 
+    // Check if it's a holiday
     $holiday_builder = $this->db->table('tbl_holiday');
     $holiday_builder->where([
         'date' => $selected_date,
@@ -723,19 +834,19 @@ public function fetchslots()
         ])->setStatusCode(200);
     }
 
+    // Fetch slots based on branch and day
     $slots_builder = $this->db->table('tbl_slots');
     $slots_builder->where([
-        'doctor_id' => $doctor_id,
         'branch_id' => $branch_id,
         'day_name' => $day_name,
         'is_deleted' => 'N'
     ]);
     $slots = $slots_builder->get()->getResult();
 
+    // Fetch booked slots for the selected date
     $booked_slots_builder = $this->db->table('tbl_booked_slots');
     $booked_slots_builder->select('slots_id');
     $booked_slots_builder->where([
-        'doctor_id' => $doctor_id,
         'branch_id' => $branch_id,
         'selected_date' => $selected_date,
         'is_deleted' => 'N'
@@ -743,19 +854,34 @@ public function fetchslots()
     $booked_slots = $booked_slots_builder->get()->getResultArray();
     $booked_slots_ids = array_column($booked_slots, 'slots_id');
 
+    // Filter slots to exclude booked ones and those past the current time (for today)
     $filtered_slots = array_filter($slots, function($slot) use ($booked_slots_ids, $is_today, $current_time) {
         $slot_time = DateTime::createFromFormat('g:i A', $slot->slots_time, new DateTimeZone('Asia/Kolkata'));
         if ($is_today && $slot_time <= $current_time) {
-            return false; 
+            return false; // Exclude past slots if it's today
         }
-        return !in_array($slot->id, $booked_slots_ids);
+        return !in_array($slot->id, $booked_slots_ids); // Exclude booked slots
     });
 
+    // Fetch chairs and chair_ids from tbl_branch for the selected branch_id
+    $branch_builder = $this->db->table('tbl_branch');
+    $branch_builder->select('chairs, chair_ids');  // Assuming chairs is an integer and chair_ids is a string like '{C1,C2}'
+    $branch_builder->where('id', $branch_id);
+    $branch = $branch_builder->get()->getRow();
+
+    // Prepare chair data from branch data
+    $chairs = $branch ? (int)$branch->chairs : 0;  // Number of chairs as integer
+    $chair_ids = $branch ? json_decode($branch->chair_ids, true) : [];  // Decoding chair_ids from JSON format
+
+    // Return filtered slots and chair data
     return $this->response->setJSON([
         'status' => 200,
-        'data' => array_values($filtered_slots)
+        'data' => array_values($filtered_slots),
+        'chairs' => $chairs,  // Number of chairs in the branch
+        'chair_ids' => $chair_ids  // List of chair IDs
     ])->setStatusCode(200);
 }
+
 
         public function getsections()
         {
@@ -1383,7 +1509,9 @@ public function getslots($table)
         try {
             $db = \Config\Database::connect();
             if ($db->connect()) {
-                return $this->response->setJSON(['status' => 'success', 'message' => 'Database connection established successfully.']);
+                return $this->response->setJSON(['status' => 'success','heee' =>'done', 'message' => 'Database connection established successfully.']);
+
+                // return $this->response->setJSON(['status' => 'success', 'message' => 'Database connection established successfully.']);
             }
         } catch (DatabaseException $e) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Failed to connect to the database: ' . $e->getMessage()]);
@@ -1944,10 +2072,11 @@ public function submitappointment()
     date_default_timezone_set('Asia/Kolkata');
     $rawInput = file_get_contents('php://input');
     $input = json_decode($rawInput, true);
-    // print_r($input);die;
+
     if (empty($input)) {
         return $this->response->setJSON(['status' => 400, 'message' => 'No data provided.'])->setStatusCode(400);
     }
+
     $date = isset($input['date']) ? (new DateTime($input['date']))->format('Y-m-d') : null;
     $startDate = isset($input['startDate']) ? (new DateTime($input['startDate']))->format('Y-m-d') : null;
 
@@ -1957,64 +2086,56 @@ public function submitappointment()
     if ($startDate && !strtotime($startDate)) {
         return $this->response->setJSON(['status' => 400, 'message' => 'Invalid date format for "startDate".'])->setStatusCode(400);
     }
-    $slotId = $input['slot'] ?? null;
 
+    $slotId = $input['slot'] ?? null;
     if (!$slotId) {
         return $this->response->setJSON(['status' => 400, 'message' => 'Slot ID is required.'])->setStatusCode(400);
     }
+
+    // Fetch slot price
     $slotQuery = $this->db->table('tbl_slots')
-                          ->select('Price')
+                          ->select('price')
                           ->where('id', $slotId)
                           ->get();
-
     $slotResult = $slotQuery->getRowArray();
     if (!$slotResult) {
         return $this->response->setJSON(['status' => 404, 'message' => 'Slot not found.'])->setStatusCode(404);
     }
-    $input['price'] = $slotResult['Price'];
+
+    // Fetch service details (duration, price, etc.) from `tbl_servicemst`
+    $hawservices = $input['hawservices'] ?? [];
+    $serviceDetails = [];
+
+    if (!empty($hawservices)) {
+        $serviceQuery = $this->db->table('tbl_servicemst')
+                                ->select('id, name, duration, price')
+                                ->whereIn('id', $hawservices) // Fetch multiple services
+                                ->get();
+        $serviceDetails = $serviceQuery->getResultArray();
+    }
+
+    // Add service details to input
+    $input['service_details'] = $serviceDetails;
+
+    // Convert updated input to JSON
     $inputData = json_encode($input);
+
+    // print_r($inputData);exit();
+
+    // Call the stored procedure
     $query = "CALL single_appointment(?::jsonb, ?)";
-    $bindParams = [
-        $inputData,   
-        null     
-    ];
+    $bindParams = [$inputData, null];
     $queryResult = $this->db->query($query, $bindParams);
     $result = $queryResult->getRowArray();
+
     $model = new HomeModel();
-    $id = $input['consultant'];
-    $consultantEmailObj = $model->getemail($id);
-    $consultantEmail = $consultantEmailObj->email;
     $slotid = $input['slot'];
     $slottimeObj = $model->getslotstime($slotid);
     $slottime = $slottimeObj->slots_time; 
-    
-    // print_r($slottime);die;
+
     if ($result && isset($result['result'])) {
-      
         $resultData = json_decode($result['result'], true);
-        $senderMsg = view('emailform', [
-            'full_name' => $input['full_name'], // Match variable in the view
-            'mobile_no' => $input['mobile_no'],
-            'email_id' => $input['email_id'],
-            'location' => $input['location'],
-            'date' => $input['date'],
-             'slottime'=> $slottime,
-        ]);
-        $receiverMsg = view('emailformforreciver', [
-            'full_name' => $input['full_name'],
-            'mobile_no' => $input['mobile_no'],
-            'email_id' => $input['email_id'],
-            'location' => $input['location'],
-            'date' => $input['date'],
-            'slottime'=> $slottime,
-        ]);
-    $useremail = $input['email_id'];
-    $cemail = $consultantEmailObj->email; // Extract email property
-    $ccEmails = ['siddheshkadge214@gmail.com',$cemail];
-    $appointmentDateTime = $input['date'];
-    $receiverSubject = 'Your Appointment is booked Successfully.';
-    $senderSubject = 'You Have a New Appointment of ' . $input['full_name'] . ' on ' . $input['date'] . ' at ' . $slottime;
-    sendConfirmationEmail($useremail, $ccEmails, $receiverSubject, $receiverMsg, $senderSubject, $senderMsg);
+
         return $this->response->setJSON($resultData)->setStatusCode($resultData['status']);
     } else {
         return $this->response->setJSON([
@@ -2023,6 +2144,7 @@ public function submitappointment()
         ])->setStatusCode(500);
     }
 }
+
 
 
 // public function submitappointments() // main function
@@ -2147,7 +2269,7 @@ public function submitappointments()
     date_default_timezone_set('Asia/Kolkata');
     $rawInput = file_get_contents('php://input');
     $input = json_decode($rawInput, true);
-    // print_r($input);die;
+    print_r($input);die;
     $model = new HomeModel();
     $branch_id = $input['branch'];
     $section_id = $input['section'];
