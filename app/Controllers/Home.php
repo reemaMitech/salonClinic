@@ -421,41 +421,64 @@ public function create($table)
 
     log_message('debug', 'Received Data in create(): ' . json_encode($data));
 
-
-    // Check if inserting into 'tbl_register' and hash the password
+    // Special handling for tbl_register
     if ($table === 'tbl_register') {
         if (isset($data['password'])) {
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         }
 
-        // Assign default access levels if not provided
         if (!isset($data['access_levels'])) {
             $data['access_levels'] = [4,5,7,9,10,11,12,13,14,15,1]; 
         }
     }
 
+    // Special handling for tbl_chairs with multiple inserts
+    if ($table === 'tbl_chairs' && isset($data['chairs']) && is_array($data['chairs'])) {
+        foreach ($data['chairs'] as $item) {
+            $this->db->table($table)->insert($item);
+        }
 
-    // Convert input to JSON string (direct JSONB format for PostgreSQL)
-    $jsonData = json_encode($input, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-    // Debugging logs
-    log_message('debug', "Insert Data: " . $jsonData);
-
-    // Call the stored procedure
-    $query = $this->db->query("CALL dynamic_insert(?, ?::jsonb)", [$table, $jsonData]);
-
-    if ($query) {
         return $this->response->setJSON([
             'status' => 201,
-            'message' => 'Record created successfully'
+            'message' => 'Chairs created successfully'
         ])->setStatusCode(201);
     }
 
-    return $this->response->setJSON([
-        'status' => 500,
-        'message' => 'Record creation failed'
-    ])->setStatusCode(500);
+    // Convert to JSON for PostgreSQL
+    $jsonData = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+    log_message('debug', "Insert Data: " . $jsonData);
+
+    // Prepare dynamic query based on table
+    if ($table === 'tbl_branch') {
+        // Expecting returned ID
+        $query = $this->db->query("SELECT * FROM dynamic_insert(?, ?::jsonb, ?)", [$table, $jsonData, true]);
+        $result = $query->getRow();
+
+        return $this->response->setJSON([
+            'status' => 201,
+            'message' => 'Branch created successfully',
+            'branch_id' => $result->id ?? null
+        ])->setStatusCode(201);
+    } else {
+        // No ID returned for other tables
+        $query = $this->db->query("CALL dynamic_insert(?, ?::jsonb)", [$table, $jsonData]);
+
+        if ($query) {
+            return $this->response->setJSON([
+                'status' => 201,
+                'message' => 'Record created successfully'
+            ])->setStatusCode(201);
+        }
+
+        return $this->response->setJSON([
+            'status' => 500,
+            'message' => 'Record creation failed'
+        ])->setStatusCode(500);
+    }
 }
+
+
 
 
 
@@ -737,52 +760,105 @@ public function createLoginEntry()
         // }
       
 
+        // public function update($table, $id)
+        // {
+        //     $input = json_decode(file_get_contents('php://input'), true);
+        
+        //     if (!is_array($input) || empty($input)) {
+        //         return $this->response->setJSON([
+        //             'status' => 400,
+        //             'message' => 'No valid input data provided'
+        //         ])->setStatusCode(400);
+        //     }
+        
+        //     if (isset($input[0]) && is_array($input[0])) {
+        //         $input = $input[0]; 
+        //     }
+        
+        //     $db = \Config\Database::connect();
+        
+        //     try {
+        //         // Identify fields that should be stored as PostgreSQL arrays
+        //         $arrayFields = ['chair_ids', 'bed_ids']; // Add more field names if needed
+        
+        //         foreach ($arrayFields as $field) {
+        //             if (isset($input[$field]) && is_array($input[$field])) {
+        //                 // Convert array to PostgreSQL format: {C1,C2} instead of ["C1","C2"]
+        //                 $input[$field] = '{' . implode(',', $input[$field]) . '}';
+        //             }
+        //         }
+        
+        //         // Convert full input data to JSON
+        //         $jsonData = json_encode($input, JSON_UNESCAPED_UNICODE);
+        
+        //         // Execute the stored procedure
+        //         $query = "CALL dynamic_update(?, CAST(? AS jsonb), ?)";
+        //         $db->query($query, [$table, $jsonData, $id]);
+        
+        //         return $this->response->setJSON([
+        //             'status' => 200,
+        //             'message' => 'Record updated successfully'
+        //         ])->setStatusCode(200);
+        //     } catch (\Exception $e) {
+        //         return $this->response->setJSON([
+        //             'status' => 500,
+        //             'message' => 'Record update failed: ' . $e->getMessage()
+        //         ])->setStatusCode(500);
+        //     }
+        // }
+
         public function update($table, $id)
-        {
-            $input = json_decode(file_get_contents('php://input'), true);
-        
-            if (!is_array($input) || empty($input)) {
-                return $this->response->setJSON([
-                    'status' => 400,
-                    'message' => 'No valid input data provided'
-                ])->setStatusCode(400);
-            }
-        
-            if (isset($input[0]) && is_array($input[0])) {
-                $input = $input[0]; 
-            }
-        
-            $db = \Config\Database::connect();
-        
-            try {
-                // Identify fields that should be stored as PostgreSQL arrays
-                $arrayFields = ['chair_ids', 'bed_ids']; // Add more field names if needed
-        
-                foreach ($arrayFields as $field) {
-                    if (isset($input[$field]) && is_array($input[$field])) {
-                        // Convert array to PostgreSQL format: {C1,C2} instead of ["C1","C2"]
-                        $input[$field] = '{' . implode(',', $input[$field]) . '}';
-                    }
+{
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    if (!is_array($input) || empty($input)) {
+        return $this->response->setJSON([
+            'status' => 400,
+            'message' => 'No valid input data provided'
+        ])->setStatusCode(400);
+    }
+
+    // If input is wrapped in an array (e.g., [{"field": "value"}]), unwrap it
+    if (isset($input[0]) && is_array($input[0])) {
+        $input = $input[0];
+    }
+
+    $db = \Config\Database::connect();
+
+    try {
+        // Special JSON fields (no transformation needed now)
+        $jsonFields = ['chair_ids', 'bed_ids'];
+
+        // If the table is tbl_branch, ensure fields stay as JSON arrays
+        if ($table === 'tbl_branch') {
+            foreach ($jsonFields as $field) {
+                if (isset($input[$field]) && is_array($input[$field])) {
+                    // Just ensure it's properly encoded in the final JSON
+                    continue; // No transformation needed
                 }
-        
-                // Convert full input data to JSON
-                $jsonData = json_encode($input, JSON_UNESCAPED_UNICODE);
-        
-                // Execute the stored procedure
-                $query = "CALL dynamic_update(?, CAST(? AS jsonb), ?)";
-                $db->query($query, [$table, $jsonData, $id]);
-        
-                return $this->response->setJSON([
-                    'status' => 200,
-                    'message' => 'Record updated successfully'
-                ])->setStatusCode(200);
-            } catch (\Exception $e) {
-                return $this->response->setJSON([
-                    'status' => 500,
-                    'message' => 'Record update failed: ' . $e->getMessage()
-                ])->setStatusCode(500);
             }
         }
+
+        // Convert the full input data to JSON (preserve arrays)
+        $jsonData = json_encode($input, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+        // Call your dynamic_update stored procedure
+        $query = "CALL dynamic_update(?, CAST(? AS jsonb), ?)";
+        $db->query($query, [$table, $jsonData, $id]);
+
+        return $this->response->setJSON([
+            'status' => 200,
+            'message' => 'Record updated successfully'
+        ])->setStatusCode(200);
+
+    } catch (\Exception $e) {
+        return $this->response->setJSON([
+            'status' => 500,
+            'message' => 'Record update failed: ' . $e->getMessage()
+        ])->setStatusCode(500);
+    }
+}
+
         
         
 
@@ -807,81 +883,285 @@ public function createLoginEntry()
             ])->setStatusCode(500);
         }
 
-public function fetchslots()
-{
-    $rawInput = file_get_contents('php://input');
-    $input = json_decode($rawInput, true); 
-    $selected_date = $input['selected_date'];
-    $branch_id = $input['branch_id'];
-    $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
-    $timezone = new DateTimeZone('Asia/Kolkata');
-    $current_time = new DateTime('now', $timezone);
-    $current_date = $current_time->format('Y-m-d');
-    $is_today = ($selected_date === $current_date);
+        // public function fetchslots()
+        // {
+        //     $rawInput = file_get_contents('php://input');
+        //     $input = json_decode($rawInput, true); 
+        //     $selected_date = $input['selected_date'];
+        //     $branch_id = $input['branch_id'];
+        //     $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
+        //     $timezone = new DateTimeZone('Asia/Kolkata');
+        //     $current_time = new DateTime('now', $timezone);
+        //     $current_date = $current_time->format('Y-m-d');
+        //     $is_today = ($selected_date === $current_date);
+        
+        //     // 1. Check for holiday
+        //     $holiday = $this->db->table('tbl_holiday')
+        //         ->where(['date' => $selected_date, 'is_deleted' => 'N'])
+        //         ->get()->getRow();
+        
+        //     if ($holiday) {
+        //         return $this->response->setJSON([
+        //             'status' => 203,
+        //             'message' => 'No slots available on this date as it is a holiday.'
+        //         ])->setStatusCode(200);
+        //     }
+        
+        //     // 2. Fetch slots
+        //     $slots = $this->db->table('tbl_slots')
+        //         ->where([
+        //             'branch_id' => $branch_id,
+        //             'day_name' => $day_name,
+        //             'is_deleted' => 'N'
+        //         ])
+        //         ->get()->getResult();
+        
+        //     // 3. Fetch chairs/beds and group by type
+        //     $chairs_query = $this->db->table('tbl_chairs')
+        //         ->where([
+        //             'branch_id' => $branch_id,
+        //             'is_active' => 'Y',
+        //             'is_deleted' => 'N'
+        //         ])
+        //         ->get()->getResult();
+        
+        //     $ref_to_chair_map = []; // ref_id => ['chair_id' => 'C1', 'type' => 'Chair']
+        //     $type_to_chairs = [];   // Chair => ['C1', 'C2'], Bed => ['B1', 'B2']
+        
+        //     foreach ($chairs_query as $chair) {
+        //         $ref_to_chair_map[$chair->id] = [
+        //             'chair_id' => $chair->chair_id,
+        //             'type' => $chair->type
+        //         ];
+        
+        //         if (!isset($type_to_chairs[$chair->type])) {
+        //             $type_to_chairs[$chair->type] = [];
+        //         }
+        
+        //         $type_to_chairs[$chair->type][] = $chair->chair_id;
+        //     }
+        
+        //     // 4. Fetch booked chairs/beds
+        //     $booked_slots = $this->db->table('tbl_booked_slots')
+        //         ->where([
+        //             'branch_id' => $branch_id,
+        //             'selected_date' => $selected_date,
+        //             'is_deleted' => 'N'
+        //         ])
+        //         ->get()->getResult();
 
-    // Check if it's a holiday
-    $holiday_builder = $this->db->table('tbl_holiday');
-    $holiday_builder->where([
-        'date' => $selected_date,
-        'is_deleted' => 'N'
-    ]);
-    $holiday = $holiday_builder->get()->getRow();
+        //         print_r(($booked_slots));die;
+        
+        //     // 5. Organize booked chairs per slot
+        //     $booked_slot_info = []; // slot_id => type => booked_chairs
+        
+        //     foreach ($booked_slots as $bs) {
+        //         $slot_id = $bs->slots_id;
+        //         $ref_id = $bs->chair_ref_id;
+        
+        //         if (isset($ref_to_chair_map[$ref_id])) {
+        //             $chair_id = $ref_to_chair_map[$ref_id]['chair_id'];
+        //             $type = $ref_to_chair_map[$ref_id]['type'];
+        
+        //             if (!isset($booked_slot_info[$slot_id][$type])) {
+        //                 $booked_slot_info[$slot_id][$type] = [];
+        //             }
+        
+        //             $booked_slot_info[$slot_id][$type][] = $chair_id;
+        //         }
+        //     }
+        
+        //     // 6. Final slot processing
+        //     $final_slots = [];
+        
+        //     foreach ($slots as $slot) {
+        //         $slot_time = DateTime::createFromFormat('g:i A', $slot->slots_time, new DateTimeZone('Asia/Kolkata'));
+        //         if ($is_today && $slot_time <= $current_time) {
+        //             continue;
+        //         }
+        
+        //         $slot_details = [
+        //             'id' => $slot->id,
+        //             'slots_time' => $slot->slots_time,
+        //             'day_name' => $slot->day_name,
+        //             'branch_id' => $slot->branch_id,
+        //             'types' => []  // Holds chair/bed data by type
+        //         ];
+        
+        //         foreach ($type_to_chairs as $type => $all_chairs_of_type) {
+        //             $booked = $booked_slot_info[$slot->id][$type] ?? [];
+        //             $available = array_values(array_diff($all_chairs_of_type, $booked));
+        
+        //             if (count($available) > 0) {
+        //                 $slot_details['types'][] = [
+        //                     'type' => $type,
+        //                     'remaining_count' => count($available),
+        //                     'available_ids' => $available,
+        //                     'booked_ids' => $booked
+        //                 ];
+        //             }
+        //         }
+        
+        //         if (!empty($slot_details['types'])) {
+        //             $final_slots[] = $slot_details;
+        //         }
+        //     }
+        
+        //     return $this->response->setJSON([
+        //         'status' => 200,
+        //         'data' => $final_slots,
+        //         'total_types' => $type_to_chairs // summary of all chairs/beds
+        //     ])->setStatusCode(200);
+        // }
 
-    if ($holiday) {
-        return $this->response->setJSON([
-            'status' => 203,
-            'message' => 'No slots available on this date as it is a holiday.'
-        ])->setStatusCode(200);
-    }
+        public function fetchslots()
+        {
+            $rawInput = file_get_contents('php://input');
+            $input = json_decode($rawInput, true); 
+            $selected_date = $input['selected_date'];
+            $branch_id = $input['branch_id'];
+            $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
+            $timezone = new DateTimeZone('Asia/Kolkata');
+            $current_time = new DateTime('now', $timezone);
+            $current_date = $current_time->format('Y-m-d');
+            $is_today = ($selected_date === $current_date);
+        
+            // 1. Check for holiday
+            $holiday = $this->db->table('tbl_holiday')
+                ->where(['date' => $selected_date, 'is_deleted' => 'N'])
+                ->get()->getRow();
+        
+            if ($holiday) {
+                return $this->response->setJSON([
+                    'status' => 203,
+                    'message' => 'No slots available on this date as it is a holiday.'
+                ])->setStatusCode(200);
+            }
+        
+            // 2. Fetch slots
+            $slots = $this->db->table('tbl_slots')
+                ->where([
+                    'branch_id' => $branch_id,
+                    'day_name' => $day_name,
+                    'is_deleted' => 'N'
+                ])
+                ->get()->getResult();
+        
+            // 3. Fetch chairs/beds and group by type
+            $chairs_query = $this->db->table('tbl_chairs')
+                ->where([
+                    'branch_id' => $branch_id,
+                    'is_active' => 'Y',
+                    'is_deleted' => 'N'
+                ])
+                ->get()->getResult();
+        
+            $ref_to_chair_map = []; // ref_id => ['chair_id' => 'C1', 'type' => 'Chair']
+            $type_to_chairs = [];   // Chair => ['C1', 'C2'], Bed => ['B1', 'B2']
+        
+            foreach ($chairs_query as $chair) {
+                $ref_to_chair_map[$chair->id] = [
+                    'chair_id' => $chair->chair_id,
+                    'type' => $chair->type
+                ];
+        
+                if (!isset($type_to_chairs[$chair->type])) {
+                    $type_to_chairs[$chair->type] = [];
+                }
+        
+                $type_to_chairs[$chair->type][] = $chair->chair_id;
+            }
+        
+            // 4. Fetch booked chairs/beds
+            $booked_slots = $this->db->table('tbl_booked_slots')
+                ->where([
+                    'branch_id' => $branch_id,
+                    'selected_date' => $selected_date,
+                    'is_deleted' => 'N'
+                ])
+                ->get()->getResult();
+        
+            // 5. Organize booked chairs per slot
+            $booked_slot_info = []; // slot_id => type => booked_chairs
+            $booked_tracker = [];   // Avoid duplicate bookings for same chair in same slot
+        
+            foreach ($booked_slots as $bs) {
+                $slot_id = $bs->slots_id;
+                $ref_id = $bs->chair_ref_id;
+        
+                if (!isset($ref_to_chair_map[$ref_id])) continue;
+        
+                $chair_id = $ref_to_chair_map[$ref_id]['chair_id'];
+                $type = $ref_to_chair_map[$ref_id]['type'];
+        
+                // Prevent double booking
+                if (!isset($booked_tracker[$slot_id])) {
+                    $booked_tracker[$slot_id] = [];
+                }
+                if (in_array($chair_id, $booked_tracker[$slot_id])) {
+                    continue;
+                }
+                $booked_tracker[$slot_id][] = $chair_id;
+        
+                if (!isset($booked_slot_info[$slot_id][$type])) {
+                    $booked_slot_info[$slot_id][$type] = [];
+                }
+        
+                $booked_slot_info[$slot_id][$type][] = $chair_id;
+            }
+        
 
-    // Fetch slots based on branch and day
-    $slots_builder = $this->db->table('tbl_slots');
-    $slots_builder->where([
-        'branch_id' => $branch_id,
-        'day_name' => $day_name,
-        'is_deleted' => 'N'
-    ]);
-    $slots = $slots_builder->get()->getResult();
 
-    // Fetch booked slots for the selected date
-    $booked_slots_builder = $this->db->table('tbl_booked_slots');
-    $booked_slots_builder->select('slots_id');
-    $booked_slots_builder->where([
-        'branch_id' => $branch_id,
-        'selected_date' => $selected_date,
-        'is_deleted' => 'N'
-    ]);
-    $booked_slots = $booked_slots_builder->get()->getResultArray();
-    $booked_slots_ids = array_column($booked_slots, 'slots_id');
-
-    // Filter slots to exclude booked ones and those past the current time (for today)
-    $filtered_slots = array_filter($slots, function($slot) use ($booked_slots_ids, $is_today, $current_time) {
-        $slot_time = DateTime::createFromFormat('g:i A', $slot->slots_time, new DateTimeZone('Asia/Kolkata'));
-        if ($is_today && $slot_time <= $current_time) {
-            return false; // Exclude past slots if it's today
+            
+            // 6. Final slot processing
+            $final_slots = [];
+        
+            foreach ($slots as $slot) {
+                $slot_time = DateTime::createFromFormat('g:i A', $slot->slots_time, new DateTimeZone('Asia/Kolkata'));
+                if ($is_today && $slot_time <= $current_time) {
+                    continue;
+                }
+        
+                $slot_details = [
+                    'id' => $slot->id,
+                    'slots_time' => $slot->slots_time,
+                    'day_name' => $slot->day_name,
+                    'branch_id' => $slot->branch_id,
+                    'types' => [],
+                    'total_available_count' => 0
+                ];
+        
+                foreach ($type_to_chairs as $type => $all_chairs_of_type) {
+                    $booked = $booked_slot_info[$slot->id][$type] ?? [];
+                    $available = array_values(array_diff($all_chairs_of_type, $booked));
+        
+                    if (count($available) > 0) {
+                        $slot_details['types'][] = [
+                            'type' => $type,
+                            'remaining_count' => count($available),
+                            'available_ids' => $available,
+                            'booked_ids' => $booked
+                        ];
+                        $slot_details['total_available_count'] += count($available);
+                    }
+                }
+        
+                if (!empty($slot_details['types'])) {
+                    $final_slots[] = $slot_details;
+                }
+            }
+        
+            return $this->response->setJSON([
+                'status' => 200,
+                'data' => $final_slots,
+                'total_types' => $type_to_chairs
+            ])->setStatusCode(200);
         }
-        return !in_array($slot->id, $booked_slots_ids); // Exclude booked slots
-    });
+        
 
-    // Fetch chairs and chair_ids from tbl_branch for the selected branch_id
-    $branch_builder = $this->db->table('tbl_branch');
-    $branch_builder->select('chairs, chair_ids');  // Assuming chairs is an integer and chair_ids is a string like '{C1,C2}'
-    $branch_builder->where('id', $branch_id);
-    $branch = $branch_builder->get()->getRow();
-
-    // Prepare chair data from branch data
-    $chairs = $branch ? (int)$branch->chairs : 0;  // Number of chairs as integer
-    $chair_ids = $branch ? json_decode($branch->chair_ids, true) : [];  // Decoding chair_ids from JSON format
-
-    // Return filtered slots and chair data
-    return $this->response->setJSON([
-        'status' => 200,
-        'data' => array_values($filtered_slots),
-        'chairs' => $chairs,  // Number of chairs in the branch
-        'chair_ids' => $chair_ids  // List of chair IDs
-    ])->setStatusCode(200);
-}
-
+        
+        
+        
 
         public function getsections()
         {
@@ -2067,6 +2347,84 @@ public function fetchslotsforcustome()
         ])->setStatusCode(500);
     }
 }
+// public function submitappointment()
+// {
+//     date_default_timezone_set('Asia/Kolkata');
+//     $rawInput = file_get_contents('php://input');
+//     $input = json_decode($rawInput, true);
+
+//     if (empty($input)) {
+//         return $this->response->setJSON(['status' => 400, 'message' => 'No data provided.'])->setStatusCode(400);
+//     }
+
+//     $date = isset($input['date']) ? (new DateTime($input['date']))->format('Y-m-d') : null;
+//     $startDate = isset($input['startDate']) ? (new DateTime($input['startDate']))->format('Y-m-d') : null;
+
+//     if ($date && !strtotime($date)) {
+//         return $this->response->setJSON(['status' => 400, 'message' => 'Invalid date format for "date".'])->setStatusCode(400);
+//     }
+//     if ($startDate && !strtotime($startDate)) {
+//         return $this->response->setJSON(['status' => 400, 'message' => 'Invalid date format for "startDate".'])->setStatusCode(400);
+//     }
+
+//     $slotId = $input['slot'] ?? null;
+//     if (!$slotId) {
+//         return $this->response->setJSON(['status' => 400, 'message' => 'Slot ID is required.'])->setStatusCode(400);
+//     }
+
+//     // Fetch slot price
+//     $slotQuery = $this->db->table('tbl_slots')
+//                           ->select('price')
+//                           ->where('id', $slotId)
+//                           ->get();
+//     $slotResult = $slotQuery->getRowArray();
+//     if (!$slotResult) {
+//         return $this->response->setJSON(['status' => 404, 'message' => 'Slot not found.'])->setStatusCode(404);
+//     }
+
+//     // Fetch service details (duration, price, etc.) from `tbl_servicemst`
+//     $hawservices = $input['hawservices'] ?? [];
+//     $serviceDetails = [];
+
+//     if (!empty($hawservices)) {
+//         $serviceQuery = $this->db->table('tbl_servicemst')
+//                                 ->select('id, name, duration, price')
+//                                 ->whereIn('id', $hawservices) // Fetch multiple services
+//                                 ->get();
+//         $serviceDetails = $serviceQuery->getResultArray();
+//     }
+
+//     // Add service details to input
+//     $input['service_details'] = $serviceDetails;
+
+//     // Convert updated input to JSON
+//     $inputData = json_encode($input);
+
+//     // print_r($inputData);exit();
+
+//     // Call the stored procedure
+//     $query = "CALL single_appointment(?::jsonb, ?)";
+//     $bindParams = [$inputData, null];
+//     $queryResult = $this->db->query($query, $bindParams);
+//     $result = $queryResult->getRowArray();
+
+//     $model = new HomeModel();
+//     $slotid = $input['slot'];
+//     $slottimeObj = $model->getslotstime($slotid);
+//     $slottime = $slottimeObj->slots_time; 
+
+//     if ($result && isset($result['result'])) {
+//         $resultData = json_decode($result['result'], true);
+
+//         return $this->response->setJSON($resultData)->setStatusCode($resultData['status']);
+//     } else {
+//         return $this->response->setJSON([
+//             'status' => 500,
+//             'message' => 'Error: Unexpected result from stored procedure.'
+//         ])->setStatusCode(500);
+//     }
+// }
+
 public function submitappointment()
 {
     date_default_timezone_set('Asia/Kolkata');
@@ -2092,37 +2450,69 @@ public function submitappointment()
         return $this->response->setJSON(['status' => 400, 'message' => 'Slot ID is required.'])->setStatusCode(400);
     }
 
-    // Fetch slot price
-    $slotQuery = $this->db->table('tbl_slots')
-                          ->select('price')
-                          ->where('id', $slotId)
-                          ->get();
-    $slotResult = $slotQuery->getRowArray();
-    if (!$slotResult) {
-        return $this->response->setJSON(['status' => 404, 'message' => 'Slot not found.'])->setStatusCode(404);
+    $branchId = $input['branch'] ?? null;
+    if (!$branchId) {
+        return $this->response->setJSON(['status' => 400, 'message' => 'Branch ID is required.'])->setStatusCode(400);
     }
 
-    // Fetch service details (duration, price, etc.) from `tbl_servicemst`
+    // ✅ Step 1: Get all chairs for the branch
+    $chairs = $this->db->table('tbl_chairs')
+        ->select('id')
+        ->where('branch_id', $branchId)
+        ->orderBy('id', 'ASC')
+        ->get()
+        ->getResultArray();
+
+    if (empty($chairs)) {
+        return $this->response->setJSON(['status' => 404, 'message' => 'No chairs found for this branch.'])->setStatusCode(404);
+    }
+
+    // ✅ Step 2: Get already booked chairs for this date and slot
+    $bookedChairs = $this->db->table('tbl_booked_slots')
+        ->select('chair_ref_id')
+        ->where('branch_id', $branchId)
+        ->where('selected_date', $date)
+        ->where('slots_id', $slotId)
+        ->get()
+        ->getResultArray();
+
+    // print_r($bookedChairs);exit();
+
+    $bookedChairIds = array_column($bookedChairs, 'chair_ref_id');
+
+    // ✅ Step 3: Assign first available chair
+    $assignedChairId = null;
+    foreach ($chairs as $chair) {
+        if (!in_array($chair['id'], $bookedChairIds)) {
+            $assignedChairId = $chair['id'];
+            break;
+        }
+    }
+
+    if (!$assignedChairId) {
+        return $this->response->setJSON(['status' => 409, 'message' => 'All chairs are booked for the selected slot.'])->setStatusCode(409);
+    }
+
+    // ✅ Add chair_id to input
+    $input['chair_ref_id'] = $assignedChairId;
+
+    // ✅ Get service details
     $hawservices = $input['hawservices'] ?? [];
     $serviceDetails = [];
 
     if (!empty($hawservices)) {
         $serviceQuery = $this->db->table('tbl_servicemst')
                                 ->select('id, name, duration, price')
-                                ->whereIn('id', $hawservices) // Fetch multiple services
+                                ->whereIn('id', $hawservices)
                                 ->get();
         $serviceDetails = $serviceQuery->getResultArray();
     }
 
-    // Add service details to input
     $input['service_details'] = $serviceDetails;
 
-    // Convert updated input to JSON
+    // ✅ Prepare data and call stored procedure
     $inputData = json_encode($input);
 
-    // print_r($inputData);exit();
-
-    // Call the stored procedure
     $query = "CALL single_appointment(?::jsonb, ?)";
     $bindParams = [$inputData, null];
     $queryResult = $this->db->query($query, $bindParams);
@@ -2131,11 +2521,10 @@ public function submitappointment()
     $model = new HomeModel();
     $slotid = $input['slot'];
     $slottimeObj = $model->getslotstime($slotid);
-    $slottime = $slottimeObj->slots_time; 
+    $slottime = $slottimeObj->slots_time;
 
     if ($result && isset($result['result'])) {
         $resultData = json_decode($result['result'], true);
-
         return $this->response->setJSON($resultData)->setStatusCode($resultData['status']);
     } else {
         return $this->response->setJSON([
@@ -2144,6 +2533,7 @@ public function submitappointment()
         ])->setStatusCode(500);
     }
 }
+
 
 
 
