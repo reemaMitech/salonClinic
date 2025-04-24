@@ -1306,31 +1306,87 @@ class Home extends BaseController
     //     ])->setStatusCode(200);
     // }
 
-    private function getChairAvailabilityMap(array $booked_slots, array $chairs_query): array
+    private function getChairAvailabilityMap(array $booked_slots, array $chairs_query, int $total_duration, array $available_slots): array
     {
-        $availability_map = []; // ref_id => latest available time
+        $availability_map = []; // ref_id => data
+        $timezone = new DateTimeZone('Asia/Kolkata');
+    
+        // Group bookings by chair_ref_id
+        $grouped_by_chair = [];
+    
+        foreach ($booked_slots as $slot) {
+            $ref_id = $slot->chair_ref_id;
+            if (!isset($grouped_by_chair[$ref_id])) {
+                $grouped_by_chair[$ref_id] = [];
+            }
+            $grouped_by_chair[$ref_id][] = $slot;
+        }
     
         foreach ($chairs_query as $chair) {
             $ref_id = $chair->id;
+            $bookings = $grouped_by_chair[$ref_id] ?? [];
+
+            // print_r( $bookings);
+    
+            // Sort by slots_time
+            usort($bookings, function ($a, $b) {
+                $a_time = DateTime::createFromFormat('h:i A', $a->slot_time, new DateTimeZone('Asia/Kolkata'));
+                $b_time = DateTime::createFromFormat('h:i A', $b->slot_time, new DateTimeZone('Asia/Kolkata'));
+                return $a_time <=> $b_time;
+            });
+    
             $latest_time = null;
+            $gap_slot_info = null;
     
-            foreach ($booked_slots as $slot) {
-                if ($slot->chair_ref_id == $ref_id && $slot->chair_available_from) {
-                    $current_time = DateTime::createFromFormat('H:i:s', $slot->chair_available_from, new DateTimeZone('Asia/Kolkata'));
-    
-                    if (!$latest_time || $current_time > $latest_time) {
-                        $latest_time = $current_time;
+            for ($i = 1; $i < count($bookings); $i++) {
+                $prev_available = DateTime::createFromFormat('H:i:s', $bookings[$i - 1]->chair_available_from, $timezone);
+                $next_slot_time = DateTime::createFromFormat('h:i A', $bookings[$i]->slot_time, $timezone);
+            
+                if ($prev_available && $next_slot_time) {
+                    $gap_minutes = ($next_slot_time->getTimestamp() - $prev_available->getTimestamp()) / 60;
+            
+                    // 👇 Debug output
+                    // echo "Chair ID: $ref_id | Gap between " . $prev_available->format('H:i:s') . " and " . $next_slot_time->format('H:i:s') . " is $gap_minutes minutes\n";
+            
+                    if ($gap_minutes >= $total_duration) {
+                        $gap_slot_info = [
+                            'start' => $prev_available->format('H:i:s'),
+                            'end' => $next_slot_time->format('H:i:s'),
+                            'gap' => $gap_minutes
+                        ];
+                        break;
                     }
                 }
             }
+            
     
-            if ($latest_time) {
-                $availability_map[$ref_id] = $latest_time->format('H:i:s');
+            // Use last available time from latest booking if available
+           
+            if (count($bookings) > 0) {
+                $last_booking = end($bookings);
+                $latest_time = $last_booking->chair_available_from;
+            } else {
+                // No bookings for this chair — get earliest slot for the day
+                if (!empty($available_slots)) {
+                    // Assuming slots are already sorted, else sort them first
+                    $first_slot = $available_slots[0];
+                    $slot_time_obj = DateTime::createFromFormat('g:i A', $first_slot->slots_time, $timezone);
+                    $latest_time = $slot_time_obj ? $slot_time_obj->format('H:i:s') : null;
+                }
             }
+            
+    
+            // Store data
+            $availability_map[$ref_id] = [
+                'latest_time' => $latest_time,
+                'gap_available' => $gap_slot_info // may be null if no suitable gap
+            ];
         }
     
+        // print_r($availability_map);exit();
         return $availability_map;
     }
+    
     
 
 
@@ -1339,6 +1395,7 @@ class Home extends BaseController
 {
     $rawInput = file_get_contents('php://input');
     $input = json_decode($rawInput, true);
+    // print_r($input);exit();
     $selected_date = $input['selected_date'];
     $branch_id = $input['branch_id'];
     $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
@@ -1404,25 +1461,48 @@ class Home extends BaseController
         //  echo'<pre>';print_r($chairs_query);
         //  exit();
     // Get availability map
-    $chair_availability_map = $this->getChairAvailabilityMap($booked_slots, $chairs_query);
+    $chair_availability_map = $this->getChairAvailabilityMap($booked_slots, $chairs_query, $input['total_duration'], $slots);
+
+
 
 // print_r($chair_availability_map);exit();
 
     // === NEW: Find minimum available time and corresponding chair_ref_id ===
+ 
     $min_time = null;
     $min_chair_ref_id = null;
-
-    foreach ($chair_availability_map as $ref_id => $time) {
-        if ($time) {
-            $time_obj = DateTime::createFromFormat('H:i:s', $time, new DateTimeZone('Asia/Kolkata'));
-            if (!$min_time || $time_obj < $min_time) {
-                $min_time = $time_obj;
-                $min_chair_ref_id = $ref_id;
+    
+    // If no bookings exist, fallback to first chair in branch
+    if (empty($chair_availability_map)) {
+        if (!empty($chairs_query)) {
+            $min_chair_ref_id = $chairs_query[0]->id;
+        }
+    } else {
+        foreach ($chair_availability_map as $ref_id => $time_data) {
+            if (isset($time_data['latest_time']) && $time_data['latest_time']) {
+                $time_obj = DateTime::createFromFormat('H:i:s', $time_data['latest_time'], new DateTimeZone('Asia/Kolkata'));
+    
+                if (!$min_time || $time_obj < $min_time) {
+                    $min_time = $time_obj;
+                    $min_chair_ref_id = $ref_id;
+                }
             }
         }
+    
+        // Extra fallback if no latest_time available
+        if (!$min_chair_ref_id && !empty($chairs_query)) {
+            $min_chair_ref_id = $chairs_query[0]->id;
+        }
     }
+    
+    // Assign final chair_ref_id
+    $input['chair_ref_id'] = $min_chair_ref_id;
+    
+    
 
     $min_available_time = $min_time ? $min_time->format('H:i:s') : null;
+
+    // print_r($min_available_time);exit();
 
     // === Filter eligible slots after min_time ===
     $filtered_slots = [];
@@ -1465,6 +1545,10 @@ class Home extends BaseController
         }
     }
 
+
+    // print_r($filtered_slots);exit();
+    // print_r($min_available_time);
+    // print_r($min_chair_ref_id);exit();
     return $this->response->setJSON([
         'status' => 200,
         'slots' => $filtered_slots,
@@ -2917,6 +3001,7 @@ $inputData = json_encode($input);
 
     // ✅ Prepare data and call stored procedure
     $inputData = json_encode($input);
+    // print_r($inputData);exit();
 
     $query = "CALL single_appointment(?::jsonb, ?)";
     $bindParams = [$inputData, null];
