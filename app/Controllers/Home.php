@@ -1391,20 +1391,187 @@ class Home extends BaseController
 
 
 
-    public function fetchslots()
+//     public function fetchslots()
+// {
+//     $rawInput = file_get_contents('php://input');
+//     $input = json_decode($rawInput, true);
+//     // print_r($input);exit();
+//     $selected_date = $input['selected_date'];
+//     $branch_id = $input['branch_id'];
+//     $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
+//     $timezone = new DateTimeZone('Asia/Kolkata');
+//     $current_time = new DateTime('now', $timezone);
+//     $current_date = $current_time->format('Y-m-d');
+//     $is_today = ($selected_date === $current_date);
+
+//     // 1. Check for holiday
+//     $holiday = $this->db->table('tbl_holiday')
+//         ->where(['date' => $selected_date, 'is_deleted' => 'N'])
+//         ->get()->getRow();
+
+//     if ($holiday) {
+//         return $this->response->setJSON([
+//             'status' => 203,
+//             'message' => 'No slots available on this date as it is a holiday.'
+//         ])->setStatusCode(200);
+//     }
+
+//     // 2. Fetch slots
+//     $slots = $this->db->table('tbl_slots')
+//         ->where([
+//             'branch_id' => $branch_id,
+//             'day_name' => $day_name,
+//             'is_deleted' => 'N'
+//         ])
+//         ->get()->getResult();
+
+//     // 3. Fetch chairs/beds and group by type
+//     $chairs_query = $this->db->table('tbl_chairs')
+//         ->where([
+//             'branch_id' => $branch_id,
+//             'is_active' => 'Y',
+//             'type' => 'chair'
+//         ])
+//         ->get()->getResult();
+
+//     $ref_to_chair_map = [];
+//     $type_to_chairs = [];
+
+//     foreach ($chairs_query as $chair) {
+//         $ref_to_chair_map[$chair->id] = [
+//             'chair_id' => $chair->chair_id,
+//             'type' => $chair->type
+//         ];
+//         if (!isset($type_to_chairs[$chair->type])) {
+//             $type_to_chairs[$chair->type] = [];
+//         }
+//         $type_to_chairs[$chair->type][] = $chair->chair_id;
+//     }
+
+//     // 4. Fetch booked slots
+//     $booked_slots = $this->db->table('tbl_booked_slots')
+//         ->where([
+//             'branch_id' => $branch_id,
+//             'selected_date' => $selected_date,
+//             'is_deleted' => 'N'
+//         ])
+//         ->get()->getResult();
+        
+//         // echo'<pre>';print_r($booked_slots);
+//         //  echo'<pre>';print_r($chairs_query);
+//         //  exit();
+//     // Get availability map
+//     $chair_availability_map = $this->getChairAvailabilityMap($booked_slots, $chairs_query, $input['total_duration'], $slots);
+
+
+
+// // print_r($chair_availability_map);exit();
+
+//     // === NEW: Find minimum available time and corresponding chair_ref_id ===
+ 
+//     $min_time = null;
+//     $min_chair_ref_id = null;
+    
+//     // If no bookings exist, fallback to first chair in branch
+//     if (empty($chair_availability_map)) {
+//         if (!empty($chairs_query)) {
+//             $min_chair_ref_id = $chairs_query[0]->id;
+//         }
+//     } else {
+//         foreach ($chair_availability_map as $ref_id => $time_data) {
+//             if (isset($time_data['latest_time']) && $time_data['latest_time']) {
+//                 $time_obj = DateTime::createFromFormat('H:i:s', $time_data['latest_time'], new DateTimeZone('Asia/Kolkata'));
+    
+//                 if (!$min_time || $time_obj < $min_time) {
+//                     $min_time = $time_obj;
+//                     $min_chair_ref_id = $ref_id;
+//                 }
+//             }
+//         }
+    
+//         // Extra fallback if no latest_time available
+//         if (!$min_chair_ref_id && !empty($chairs_query)) {
+//             $min_chair_ref_id = $chairs_query[0]->id;
+//         }
+//     }
+    
+//     // Assign final chair_ref_id
+//     $input['chair_ref_id'] = $min_chair_ref_id;
+    
+    
+
+//     $min_available_time = $min_time ? $min_time->format('H:i:s') : null;
+
+//     // print_r($min_available_time);exit();
+
+//     // === Filter eligible slots after min_time ===
+//     $filtered_slots = [];
+//     $booked_slot_info = []; // Ensure this is initialized
+
+//     foreach ($slots as $slot) {
+//         $slot_time = DateTime::createFromFormat('g:i A', $slot->slots_time, new DateTimeZone('Asia/Kolkata'));
+
+//         // Skip slots before the min_time
+//         if ($min_time && $slot_time < $min_time) {
+//             continue;
+//         }
+
+//         $slot_details = [
+//             'id' => $slot->id,
+//             'slots_time' => $slot->slots_time,
+//             'day_name' => $slot->day_name,
+//             'branch_id' => $slot->branch_id,
+//             'types' => [],
+//             'total_available_count' => 0
+//         ];
+
+//         foreach ($type_to_chairs as $type => $all_chairs_of_type) {
+//             $booked = $booked_slot_info[$slot->id][$type] ?? [];
+//             $available = array_values(array_diff($all_chairs_of_type, $booked));
+
+//             if (count($available) > 0) {
+//                 $slot_details['types'][] = [
+//                     'type' => $type,
+//                     'remaining_count' => count($available),
+//                     'available_ids' => $available,
+//                     'booked_ids' => $booked
+//                 ];
+//                 $slot_details['total_available_count'] += count($available);
+//             }
+//         }
+
+//         if (!empty($slot_details['types'])) {
+//             $filtered_slots[] = $slot_details;
+//         }
+//     }
+
+
+//     // print_r($filtered_slots);exit();
+//     // print_r($min_available_time);
+//     // print_r($min_chair_ref_id);exit();
+//     return $this->response->setJSON([
+//         'status' => 200,
+//         'slots' => $filtered_slots,
+//         'min_available_time' => $min_available_time,
+//         'min_chair_ref_id' => $min_chair_ref_id
+//     ])->setStatusCode(200);
+// }
+
+
+public function fetchslots()
 {
     $rawInput = file_get_contents('php://input');
     $input = json_decode($rawInput, true);
-    // print_r($input);exit();
     $selected_date = $input['selected_date'];
     $branch_id = $input['branch_id'];
+
     $day_name = DateTime::createFromFormat('Y-m-d', $selected_date)->format('l');
     $timezone = new DateTimeZone('Asia/Kolkata');
     $current_time = new DateTime('now', $timezone);
     $current_date = $current_time->format('Y-m-d');
     $is_today = ($selected_date === $current_date);
 
-    // 1. Check for holiday
+    // 1. Check for holidays
     $holiday = $this->db->table('tbl_holiday')
         ->where(['date' => $selected_date, 'is_deleted' => 'N'])
         ->get()->getRow();
@@ -1416,146 +1583,88 @@ class Home extends BaseController
         ])->setStatusCode(200);
     }
 
-    // 2. Fetch slots
+    // 2. Fetch active chairs in the branch (excluding beds)
+    $chairs = $this->db->table('tbl_chairs')
+        ->select('id')
+        ->where([
+            'branch_id' => $branch_id,
+            'type' => 'chair',
+            'is_active' => 'Y',
+            'is_deleted' => 'N'
+        ])
+        ->get()->getResultArray();
+
+    $activeChairIds = array_column($chairs, 'id');
+    $totalActiveChairs = count($activeChairIds);
+
+    // 3. Get all slot bookings for the selected date
+    $booked = $this->db->table('tbl_booked_slots')
+        ->select('chair_ref_id, booked_slot_ids')
+        ->where([
+            'selected_date' => $selected_date,
+            'branch_id' => $branch_id,
+            'is_deleted' => 'N'
+        ])
+        ->get()->getResult();
+
+    // 4. Map of slot_id => array of booked chair IDs
+    $slotChairMap = [];
+
+    foreach ($booked as $booking) {
+        $slot_ids = is_string($booking->booked_slot_ids)
+            ? json_decode($booking->booked_slot_ids, true)
+            : $booking->booked_slot_ids;
+
+        foreach ($slot_ids as $slot_id) {
+            if (!isset($slotChairMap[$slot_id])) {
+                $slotChairMap[$slot_id] = [];
+            }
+            $slotChairMap[$slot_id][] = (int)$booking->chair_ref_id;
+        }
+    }
+
+    // 5. Fetch all available slots for that day and branch
     $slots = $this->db->table('tbl_slots')
         ->where([
             'branch_id' => $branch_id,
             'day_name' => $day_name,
             'is_deleted' => 'N'
         ])
+        ->orderBy('slots_time', 'ASC')
         ->get()->getResult();
 
-    // 3. Fetch chairs/beds and group by type
-    $chairs_query = $this->db->table('tbl_chairs')
-        ->where([
-            'branch_id' => $branch_id,
-            'is_active' => 'Y',
-            'type' => 'chair'
-        ])
-        ->get()->getResult();
-
-    $ref_to_chair_map = [];
-    $type_to_chairs = [];
-
-    foreach ($chairs_query as $chair) {
-        $ref_to_chair_map[$chair->id] = [
-            'chair_id' => $chair->chair_id,
-            'type' => $chair->type
-        ];
-        if (!isset($type_to_chairs[$chair->type])) {
-            $type_to_chairs[$chair->type] = [];
-        }
-        $type_to_chairs[$chair->type][] = $chair->chair_id;
-    }
-
-    // 4. Fetch booked slots
-    $booked_slots = $this->db->table('tbl_booked_slots')
-        ->where([
-            'branch_id' => $branch_id,
-            'selected_date' => $selected_date,
-            'is_deleted' => 'N'
-        ])
-        ->get()->getResult();
-        
-        // echo'<pre>';print_r($booked_slots);
-        //  echo'<pre>';print_r($chairs_query);
-        //  exit();
-    // Get availability map
-    $chair_availability_map = $this->getChairAvailabilityMap($booked_slots, $chairs_query, $input['total_duration'], $slots);
-
-
-
-// print_r($chair_availability_map);exit();
-
-    // === NEW: Find minimum available time and corresponding chair_ref_id ===
- 
-    $min_time = null;
-    $min_chair_ref_id = null;
-    
-    // If no bookings exist, fallback to first chair in branch
-    if (empty($chair_availability_map)) {
-        if (!empty($chairs_query)) {
-            $min_chair_ref_id = $chairs_query[0]->id;
-        }
-    } else {
-        foreach ($chair_availability_map as $ref_id => $time_data) {
-            if (isset($time_data['latest_time']) && $time_data['latest_time']) {
-                $time_obj = DateTime::createFromFormat('H:i:s', $time_data['latest_time'], new DateTimeZone('Asia/Kolkata'));
-    
-                if (!$min_time || $time_obj < $min_time) {
-                    $min_time = $time_obj;
-                    $min_chair_ref_id = $ref_id;
-                }
-            }
-        }
-    
-        // Extra fallback if no latest_time available
-        if (!$min_chair_ref_id && !empty($chairs_query)) {
-            $min_chair_ref_id = $chairs_query[0]->id;
-        }
-    }
-    
-    // Assign final chair_ref_id
-    $input['chair_ref_id'] = $min_chair_ref_id;
-    
-    
-
-    $min_available_time = $min_time ? $min_time->format('H:i:s') : null;
-
-    // print_r($min_available_time);exit();
-
-    // === Filter eligible slots after min_time ===
-    $filtered_slots = [];
-    $booked_slot_info = []; // Ensure this is initialized
+    // 6. Filter and format slots
+    $responseSlots = [];
 
     foreach ($slots as $slot) {
-        $slot_time = DateTime::createFromFormat('g:i A', $slot->slots_time, new DateTimeZone('Asia/Kolkata'));
+        $slotId = $slot->id;
+        $bookedChairsForSlot = isset($slotChairMap[$slotId]) ? array_unique($slotChairMap[$slotId]) : [];
 
-        // Skip slots before the min_time
-        if ($min_time && $slot_time < $min_time) {
-            continue;
+        $availableChairs = array_diff($activeChairIds, $bookedChairsForSlot);
+
+        if (empty($availableChairs)) {
+            continue; // No chairs available, skip slot
         }
 
-        $slot_details = [
-            'id' => $slot->id,
-            'slots_time' => $slot->slots_time,
-            'day_name' => $slot->day_name,
-            'branch_id' => $slot->branch_id,
-            'types' => [],
-            'total_available_count' => 0
+        $responseSlots[] = [
+            'id' => $slotId,
+            'slot_time' => $slot->slots_time,
+            'is_booked' => !empty($bookedChairsForSlot),
+            'chair_ref_ids' => $bookedChairsForSlot,
+            'available_chairs_count' => count($availableChairs)
         ];
-
-        foreach ($type_to_chairs as $type => $all_chairs_of_type) {
-            $booked = $booked_slot_info[$slot->id][$type] ?? [];
-            $available = array_values(array_diff($all_chairs_of_type, $booked));
-
-            if (count($available) > 0) {
-                $slot_details['types'][] = [
-                    'type' => $type,
-                    'remaining_count' => count($available),
-                    'available_ids' => $available,
-                    'booked_ids' => $booked
-                ];
-                $slot_details['total_available_count'] += count($available);
-            }
-        }
-
-        if (!empty($slot_details['types'])) {
-            $filtered_slots[] = $slot_details;
-        }
     }
 
-
-    // print_r($filtered_slots);exit();
-    // print_r($min_available_time);
-    // print_r($min_chair_ref_id);exit();
     return $this->response->setJSON([
         'status' => 200,
-        'slots' => $filtered_slots,
-        'min_available_time' => $min_available_time,
-        'min_chair_ref_id' => $min_chair_ref_id
-    ])->setStatusCode(200);
+        'slots' => $responseSlots
+    ]);
 }
+
+
+
+
+
 
 
 
@@ -2931,8 +3040,6 @@ class Home extends BaseController
     $rawInput = file_get_contents('php://input');
     $input = json_decode($rawInput, true);
 
-  
-
     if (empty($input)) {
         return $this->response->setJSON(['status' => 400, 'message' => 'No data provided.'])->setStatusCode(400);
     }
@@ -2950,23 +3057,69 @@ class Home extends BaseController
 
     $slotId = $input['slot'] ?? null;
     $branchId = $input['branch'] ?? null;
-    $chairRefId = $input['force_chair_ref_id'] ?? null;
-
     $chairRefId = isset($input['force_chair_ref_id']) ? (string)$input['force_chair_ref_id'] : null;
+
+    if (!$slotId || !$branchId) {
+        return $this->response->setJSON([
+            'status' => 400,
+            'message' => 'Slot ID and Branch ID are required.'
+        ])->setStatusCode(400);
+    }
+    
+    if (is_null($chairRefId)) {
+        // Find all active chairs in the branch
+        $activeChairs = $this->db->table('tbl_chairs')
+            ->select('id')
+            ->where([
+                'branch_id' => $branchId,
+                'is_active' => 'Y',
+                'is_deleted' => 'N'
+            ])
+            ->get()->getResultArray();
+    
+        $availableChairId = null;
+    
+        foreach ($activeChairs as $chair) {
+            $isBooked = $this->db->table('tbl_booked_slots')
+                ->where([
+                    'branch_id' => $branchId,
+                    'selected_date' => $date,
+                    'slots_id' => $slotId,
+                    'chair_ref_id' => $chair['id'],
+                    'is_deleted' => 'N'
+                ])
+                ->countAllResults();
+    
+            if ($isBooked == 0) {
+                $availableChairId = $chair['id'];
+                break;
+            }
+        }
+    
+        if ($availableChairId === null) {
+            return $this->response->setJSON([
+                'status' => 409,
+                'message' => 'No available chair for the selected slot and date.'
+            ])->setStatusCode(409);
+        }
+    
+        $chairRefId = (string)$availableChairId;
+    }
+    
     $input['chair_ref_id'] = $chairRefId;
     
 
-$inputData = json_encode($input);
 // print_r($inputData);exit();
 
 
-    if (!$slotId || !$branchId || !$chairRefId) {
-        return $this->response->setJSON([
-            'status' => 400,
-            'message' => 'Slot ID, Branch ID, and Chair ID are required.'
-        ])->setStatusCode(400);
-    }
+    // if (!$slotId || !$branchId || !$chairRefId) {
+    //     return $this->response->setJSON([
+    //         'status' => 400,
+    //         'message' => 'Slot ID, Branch ID, and Chair ID are required.'
+    //     ])->setStatusCode(400);
+    // }
 
+    $inputData = json_encode($input);
     // ✅ (Optional) Validate that the selected chair is still free — safeguard if needed
     $isAlreadyBooked = $this->db->table('tbl_booked_slots')
         ->where([

@@ -92,4 +92,35 @@ class HomeModel extends Model
 
         return $query->getRow();
     }
+
+    public function fetchSlotsByBranchAndDay($branch_id, $day_name) {
+        return $this->db->table('tbl_slots')
+            ->where('branch_id', $branch_id)
+            ->where('day_name', $day_name)
+            ->get()
+            ->getResult();
+    }
+    
+    public function getBookedSlotsByBranch($branch_id, $date) {
+        return $this->db->table('tbl_booked_slots')
+            ->where('branch_id', $branch_id)
+            ->where('selected_date', $date)
+            ->get()
+            ->getResult();
+    }
+    
+    public function getChairRefMappingByBranch($branch_id) {
+        $result = $this->db->table('tbl_chairs')
+            ->where('branch_id', $branch_id)
+            ->get()
+            ->getResult();
+    
+        $mapping = [];
+        foreach ($result as $row) {
+            $mapping[$row->chair_id] = ['chair_id' => $row->id]; // use chair_id instead of chair_ref_id
+        }
+    
+        return $mapping;
+    }
+    
 }
