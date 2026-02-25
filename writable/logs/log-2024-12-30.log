@@ -1,0 +1,79 @@
+DEBUG - 2024-12-30 01:19:04 --> Received data: Array
+(
+    [systolic] => 200
+    [diastolic] => 140
+    [fasting] => 200
+    [pp] => 140
+    [weight] => 70
+    [bmi] => asdd
+    [illness] => sdsad
+    [symptoms] => 
+    [treatment] => 
+    [followUpDate] => 
+    [fees] => 500
+    [appointment_id] => 33
+    [record_date] => 2024-12-30
+)
+
+DEBUG - 2024-12-30 01:19:04 --> Appointment ID: 33
+DEBUG - 2024-12-30 01:19:04 --> Fees: 500
+DEBUG - 2024-12-30 01:20:55 --> prescription: Array
+(
+    [appointment_id] => 33
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => acetaminophen 
+                    [morning] => 1
+                    [afternoon] => 
+                    [evening] => 
+                    [days] => 4
+                    [record_date] => 2024-12-30
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 1.5 gm
+                )
+
+        )
+
+)
+
+DEBUG - 2024-12-30 01:59:02 --> Received data: Array
+(
+    [systolic] => 200
+    [diastolic] => 140
+    [fasting] => 200
+    [pp] => 140
+    [weight] => 70
+    [bmi] => asdd
+    [illness] => sdsad
+    [symptoms] => 
+    [treatment] => 
+    [followUpDate] => 
+    [fees] => 500
+    [appointment_id] => 33
+    [record_date] => 2024-12-30
+)
+
+DEBUG - 2024-12-30 01:59:02 --> Appointment ID: 33
+DEBUG - 2024-12-30 01:59:02 --> Fees: 500
+DEBUG - 2024-12-30 10:25:14 --> Received data: Array
+(
+    [systolic] => 
+    [diastolic] => 
+    [fasting] => 
+    [pp] => 
+    [weight] => 
+    [bmi] => 
+    [illness] => Muscular pain
+    [symptoms] => 
+    [treatment] => 
+    [followUpDate] => 
+    [fees] => 200
+    [appointment_id] => 33
+    [record_date] => 2024-12-30
+)
+
+DEBUG - 2024-12-30 10:25:14 --> Appointment ID: 33
+DEBUG - 2024-12-30 10:25:14 --> Fees: 200

@@ -1,0 +1,101 @@
+DEBUG - 2024-12-22 08:14:10 --> Received data: Array
+(
+    [issue_date] => 2024-12-22
+    [start_date] => 2024-12-02
+    [total_leave_days] => 6
+    [diagnosis] => test22
+    [appointment_id] => 51
+    [record_date] => 2024-12-22
+)
+
+ERROR - 2024-12-22 08:14:10 --> Missing keys in request data
+DEBUG - 2024-12-22 08:14:10 --> Appointment ID: 51
+DEBUG - 2024-12-22 08:58:22 --> Received data: Array
+(
+    [systolic] => 160
+    [diastolic] => 90
+    [fasting] => 105
+    [pp] => 92
+    [weight] => 68
+    [bmi] => 6.2
+    [illness] => test
+    [symptoms] => test
+    [treatment] => test
+    [followUpDate] => 2024-12-25
+    [fees] => 500
+    [certificate] => Array
+        (
+            [issue_date] => 2024-12-22
+            [start_date] => 2024-12-02
+            [total_leave_days] => 6
+            [diagnosis] => test22
+        )
+
+    [appointment_id] => 51
+    [record_date] => 2024-12-22
+)
+
+DEBUG - 2024-12-22 08:58:22 --> Appointment ID: 51
+DEBUG - 2024-12-22 08:58:22 --> Fees: 500
+ERROR - 2024-12-22 08:58:24 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;certificate&quot; of relation &quot;tbl_patient_records&quot; does not exist
+LINE 1: ... &quot;symptoms&quot;, &quot;treatment&quot;, &quot;followUpDate&quot;, &quot;fees&quot;, &quot;certifica...
+                                                             ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(2348): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-22 08:58:24 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;certificate&quot; of relation &quot;tbl_patient_records&quot; does not exist
+LINE 1: ... &quot;symptoms&quot;, &quot;treatment&quot;, &quot;followUpDate&quot;, &quot;fees&quot;, &quot;certifica...
+                                                             ^
+[Method: POST, Route: patient-details]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (:systolic:, :diastolic:, :fasting:, :pp:, :weight:, :bmi:, :illness:, :symptoms:, :treatment:, :followUpDate:, :fees:, :certificate:, :appointment_id:, :record_date:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(2348): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-22 08:58:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;certificate&quot; of relation &quot;tbl_patient_records&quot; does not exist
+LINE 1: ... &quot;symptoms&quot;, &quot;treatment&quot;, &quot;followUpDate&quot;, &quot;fees&quot;, &quot;certifica...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (\'160\', \'90\', \'105\', \'92\', \'68\', \'6.2\', \'test\', \'test\', \'test\', \'2024-12-25\', \'500\', (\'2024-12-22\',\'2024-12-02\',\'6\',\'test22\'), 51, \'2024-12-22\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (\'160\', \'90\', \'105\', \'92\', \'68\', \'6.2\', \'test\', \'test\', \'test\', \'2024-12-25\', \'500\', (\'2024-12-22\',\'2024-12-02\',\'6\',\'test22\'), 51, \'2024-12-22\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (:systolic:, :diastolic:, :fasting:, :pp:, :weight:, :bmi:, :illness:, :symptoms:, :treatment:, :followUpDate:, :fees:, :certificate:, :appointment_id:, :record_date:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(2348): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-22 08:58:24 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;certificate&quot; of relation &quot;tbl_patient_records&quot; does not exist
+LINE 1: ... &quot;symptoms&quot;, &quot;treatment&quot;, &quot;followUpDate&quot;, &quot;fees&quot;, &quot;certifica...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;certificate&quot; of relation &quot;tbl_patient_records&quot; does not exist
+LINE 1: ... &quot;symptoms&quot;, &quot;treatment&quot;, &quot;followUpDate&quot;, &quot;fees&quot;, &quot;certifica...
+                                                             ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (\'160\', \'90\', \'105\', \'92\', \'68\', \'6.2\', \'test\', \'test\', \'test\', \'2024-12-25\', \'500\', (\'2024-12-22\',\'2024-12-02\',\'6\',\'test22\'), 51, \'2024-12-22\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (\'160\', \'90\', \'105\', \'92\', \'68\', \'6.2\', \'test\', \'test\', \'test\', \'2024-12-25\', \'500\', (\'2024-12-22\',\'2024-12-02\',\'6\',\'test22\'), 51, \'2024-12-22\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (\'160\', \'90\', \'105\', \'92\', \'68\', \'6.2\', \'test\', \'test\', \'test\', \'2024-12-25\', \'500\', (\'2024-12-22\',\'2024-12-02\',\'6\',\'test22\'), 51, \'2024-12-22\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_patient_records" ("systolic", "diastolic", "fasting", "pp", "weight", "bmi", "illness", "symptoms", "treatment", "followUpDate", "fees", "certificate", "appointment_id", "record_date") VALUES (:systolic:, :diastolic:, :fasting:, :pp:, :weight:, :bmi:, :illness:, :symptoms:, :treatment:, :followUpDate:, :fees:, :certificate:, :appointment_id:, :record_date:)', [...], false)
+ 6 APPPATH\Controllers\Home.php(2348): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

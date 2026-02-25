@@ -1,0 +1,228 @@
+INFO - 2024-12-12 04:39:09 --> Fetching appointments with parameters: consultantId=, branchId=, tab=home
+INFO - 2024-12-12 04:39:11 --> Query Result: [{"id":"4","branch":"1","hawservices":"","consultant":"2","healthissues":"test","dates":"2024-12-12","full_name":"Test","age":"25","mobile_no":"2121212121","email_id":"ram.c@co.in","locations":"Pune","slot":"186","subscription":"","plan":"custom","subscriptiontype":null,"startdate":"2024-12-12","section":"4","created_at":"2024-12-12 04:38:58.885699","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Nigadi Branch","consultant_name":"DR. SAURABH DESHMUKH  "}]
+ERROR - 2024-12-12 04:47:25 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (2, 4, null, calpol, 150 gm, t, t, f, 5, 2024-12-12, Y, N, 2024-12-12 04:47:24.988235, 2024-12-12 04:47:24.988235). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1954): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 04:47:25 --> ErrorException: pg_query(): Query failed: ERROR:  current transaction is aborted, commands ignored until end of transaction block in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1954): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-12 05:18:47 --> TypeError: print_r(): Argument #2 ($return) must be of type bool, array given
+[Method: POST, Route: submit-prescriptions]
+in APPPATH\Controllers\Home.php on line 1944.
+ 1 APPPATH\Controllers\Home.php(1944): print_r('data in ci4', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-12-12 05:21:25 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (3, 4, null, calpol, 200 gm, t, t, f, 3, 2024-12-12, Y, N, 2024-12-12 05:21:25.620908, 2024-12-12 05:21:25.620908). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1956): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 05:27:42 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (4, 4, null, calay, 232 gm, t, f, f, 1, 2024-12-12, Y, N, 2024-12-12 05:27:42.432911, 2024-12-12 05:27:42.432911). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1956): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 05:31:03 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (5, 4, null, calai, 200 undefined, t, t, f, 2, 2024-12-12, Y, N, 2024-12-12 05:31:03.646167, 2024-12-12 05:31:03.646167). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1956): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 05:33:41 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (6, 4, null, calp, 200 gm, t, t, f, 2, 2024-12-12, Y, N, 2024-12-12 05:33:41.389959, 2024-12-12 05:33:41.389959). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1956): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 05:42:55 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (7, 4, null, cali, 200 gm, t, t, f, 2, 2024-12-12, Y, N, 2024-12-12 05:42:55.561799, 2024-12-12 05:42:55.561799). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1956): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 05:51:21 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (8, 4, null, cali, 200 gm, t, t, f, 2, 2024-12-12, Y, N, 2024-12-12 05:51:21.360429, 2024-12-12 05:51:21.360429). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1966): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-12 05:51:21 --> TypeError: pg_affected_rows(): Argument #1 ($result) must be of type PgSql\Result, bool given
+[Method: POST, Route: submit-prescriptions]
+in SYSTEMPATH\Database\Postgre\Connection.php on line 218.
+ 1 SYSTEMPATH\Database\Postgre\Connection.php(218): pg_affected_rows(false)
+ 2 APPPATH\Controllers\Home.php(1968): CodeIgniter\Database\Postgre\Connection->affectedRows()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-12-12 05:54:07 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;patient_id&quot; of relation &quot;tbl_prescriptions&quot; violates not-null constraint
+DETAIL:  Failing row contains (9, 4, null, cali, 200 gm, t, t, f, 2, 2024-12-12, Y, N, 2024-12-12 05:54:07.22509, 2024-12-12 05:54:07.22509). in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1965): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2024-12-12 08:51:44 --> ErrorException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;)&quot;
+LINE 1: ...cates&quot;, &quot;appointment_id&quot;, &quot;record_date&quot;) VALUES ((), (), (),...
+                                                             ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tb...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tb...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tb...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tb...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1927): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-12-12 08:51:44 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;)&quot;
+LINE 1: ...cates&quot;, &quot;appointment_id&quot;, &quot;record_date&quot;) VALUES ((), (), (),...
+                                                             ^
+[Method: POST, Route: patient-details]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES (:prescriptions:, :recommendedTests:, :certificates:, :appointment_id:, :record_date:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(1927): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-12 08:51:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;)&quot;
+LINE 1: ...cates&quot;, &quot;appointment_id&quot;, &quot;record_date&quot;) VALUES ((), (), (),...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES ((), (), (), \'4\', \'2024-12-12\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES ((), (), (), \'4\', \'2024-12-12\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES (:prescriptions:, :recommendedTests:, :certificates:, :appointment_id:, :record_date:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(1927): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-12 08:51:44 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;)&quot;
+LINE 1: ...cates&quot;, &quot;appointment_id&quot;, &quot;record_date&quot;) VALUES ((), (), (),...
+                                                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  syntax error at or near &quot;)&quot;
+LINE 1: ...cates&quot;, &quot;appointment_id&quot;, &quot;record_date&quot;) VALUES ((), (), (),...
+                                                             ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES ((), (), (), \'4\', \'2024-12-12\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES ((), (), (), \'4\', \'2024-12-12\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES ((), (), (), \'4\', \'2024-12-12\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO "tbl_patient_records" ("prescriptions", "recommendedTests", "certificates", "appointment_id", "record_date") VALUES (:prescriptions:, :recommendedTests:, :certificates:, :appointment_id:, :record_date:)', [...], false)
+ 6 APPPATH\Controllers\Home.php(1927): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->patient_details()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

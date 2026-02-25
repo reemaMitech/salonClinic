@@ -1,0 +1,612 @@
+DEBUG - 2024-12-26 05:08:16 --> Received data: Array
+(
+    [systolic] => 150
+    [diastolic] => 88
+    [fasting] => 105
+    [pp] => 92
+    [weight] => 100
+    [bmi] => 3
+    [illness] => test
+    [symptoms] => test
+    [treatment] => test
+    [followUpDate] => 2024-12-31
+    [fees] => 500
+    [appointment_id] => 58
+    [record_date] => 2024-12-26
+)
+
+DEBUG - 2024-12-26 05:08:16 --> Appointment ID: 58
+DEBUG - 2024-12-26 05:08:16 --> Fees: 500
+DEBUG - 2024-12-26 05:14:31 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-26
+                    [start_date] => 2024-12-02
+                    [total_leave_days] => 6
+                    [diagnosis] => Joint pain
+                )
+
+        )
+
+    [appointment_id] => 58
+    [record_date] => 2024-12-26
+)
+
+DEBUG - 2024-12-26 05:14:31 --> Appointment ID: 58
+ERROR - 2024-12-26 07:00:32 --> ErrorException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;CAST&quot;
+LINE 10:                     CAST('MMC-2023-123456' AS VARCHAR)   -- ...
+                             ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-12-26 07:00:32 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;CAST&quot;
+LINE 10:                     CAST('MMC-2023-123456' AS VARCHAR)   -- ...
+                             ^
+[Method: POST, Route: createcunsltant/tbl_register/50]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-26 07:00:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;CAST&quot;
+LINE 10:                     CAST('MMC-2023-123456' AS VARCHAR)   -- ...
+                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$t96.NejeV01npnSa5uV/Xu5NDF2/Vbw3y8IctWl28x13Mp1UYO1j.\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$t96.NejeV01npnSa5uV/Xu5NDF2/Vbw3y8IctWl28x13Mp1UYO1j.\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 3 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-26 07:00:32 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  syntax error at or near &quot;CAST&quot;
+LINE 10:                     CAST('MMC-2023-123456' AS VARCHAR)   -- ...
+                             ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  syntax error at or near &quot;CAST&quot;
+LINE 10:                     CAST(\'MMC-2023-123456\' AS VARCHAR)   -- ...
+                             ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$t96.NejeV01npnSa5uV/Xu5NDF2/Vbw3y8IctWl28x13Mp1UYO1j.\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$t96.NejeV01npnSa5uV/Xu5NDF2/Vbw3y8IctWl28x13Mp1UYO1j.\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$t96.NejeV01npnSa5uV/Xu5NDF2/Vbw3y8IctWl28x13Mp1UYO1j.\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 5 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR)  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-12-26 07:03:39 --> ErrorException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts. in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-12-26 07:03:39 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.
+[Method: POST, Route: createcunsltant/tbl_register/50]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-26 07:03:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$XltzSzmjbOKFN/LPn39PveMkiIPEnmZRvpBLZJiaOlFPmiiP5/Vk2\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$XltzSzmjbOKFN/LPn39PveMkiIPEnmZRvpBLZJiaOlFPmiiP5/Vk2\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 3 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-26 07:03:40 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  procedure sp_manage_consultant(integer, character varying, character varying, integer, character varying, character varying, character varying, character varying, character varying) does not exist
+LINE 1: CALL sp_manage_Consultant(
+             ^
+HINT:  No procedure matches the given name and argument types. You might need to add explicit type casts.', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$XltzSzmjbOKFN/LPn39PveMkiIPEnmZRvpBLZJiaOlFPmiiP5/Vk2\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$XltzSzmjbOKFN/LPn39PveMkiIPEnmZRvpBLZJiaOlFPmiiP5/Vk2\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$XltzSzmjbOKFN/LPn39PveMkiIPEnmZRvpBLZJiaOlFPmiiP5/Vk2\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 5 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-12-26 07:29:55 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;registration_number&quot; of relation &quot;tbl_register&quot; does not exist
+LINE 10:                 registration_number = p_registrationNumber
+                         ^
+QUERY:  UPDATE tbl_register
+            SET 
+                name = p_name,
+                degree = p_degree,
+                section = p_section,
+                role = p_role,
+                password = p_password,
+                mobile = p_mobile, -- Update mobile field
+                access_levels = p_access_levels, -- Update access_levels field
+                registration_number = p_registrationNumber
+            WHERE id = p_id
+CONTEXT:  PL/pgSQL function sp_manage_consultant(integer,character varying,character varying,integer,character varying,character varying,character varying,character varying,character varying) line 12 at SQL statement in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_...')
+#4 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_...', Array)
+#5 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-12-26 07:29:55 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;registration_number&quot; of relation &quot;tbl_register&quot; does not exist
+LINE 10:                 registration_number = p_registrationNumber
+                         ^
+QUERY:  UPDATE tbl_register
+            SET 
+                name = p_name,
+                degree = p_degree,
+                section = p_section,
+                role = p_role,
+                password = p_password,
+                mobile = p_mobile, -- Update mobile field
+                access_levels = p_access_levels, -- Update access_levels field
+                registration_number = p_registrationNumber
+            WHERE id = p_id
+CONTEXT:  PL/pgSQL function sp_manage_consultant(integer,character varying,character varying,integer,character varying,character varying,character varying,character varying,character varying) line 12 at SQL statement
+[Method: POST, Route: createcunsltant/tbl_register/50]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-26 07:29:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column &quot;registration_number&quot; of relation &quot;tbl_register&quot; does not exist
+LINE 10:                 registration_number = p_registrationNumber
+                         ^
+QUERY:  UPDATE tbl_register
+            SET 
+                name = p_name,
+                degree = p_degree,
+                section = p_section,
+                role = p_role,
+                password = p_password,
+                mobile = p_mobile, -- Update mobile field
+                access_levels = p_access_levels, -- Update access_levels field
+                registration_number = p_registrationNumber
+            WHERE id = p_id
+CONTEXT:  PL/pgSQL function sp_manage_consultant(integer,character varying,character varying,integer,character varying,character varying,character varying,character varying,character varying) line 12 at SQL statement
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$qGsqvWhonpNv3Z6k3oLQAOUr0i.LXMXO9zNx2yV0xX5KIFznjxFly\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$qGsqvWhonpNv3Z6k3oLQAOUr0i.LXMXO9zNx2yV0xX5KIFznjxFly\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 3 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-26 07:29:55 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column &quot;registration_number&quot; of relation &quot;tbl_register&quot; does not exist
+LINE 10:                 registration_number = p_registrationNumber
+                         ^
+QUERY:  UPDATE tbl_register
+            SET 
+                name = p_name,
+                degree = p_degree,
+                section = p_section,
+                role = p_role,
+                password = p_password,
+                mobile = p_mobile, -- Update mobile field
+                access_levels = p_access_levels, -- Update access_levels field
+                registration_number = p_registrationNumber
+            WHERE id = p_id
+CONTEXT:  PL/pgSQL function sp_manage_consultant(integer,character varying,character varying,integer,character varying,character varying,character varying,character varying,character varying) line 12 at SQL statement
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column &quot;registration_number&quot; of relation &quot;tbl_register&quot; does not exist
+LINE 10:                 registration_number = p_registrationNumber
+                         ^
+QUERY:  UPDATE tbl_register
+            SET 
+                name = p_name,
+                degree = p_degree,
+                section = p_section,
+                role = p_role,
+                password = p_password,
+                mobile = p_mobile, -- Update mobile field
+                access_levels = p_access_levels, -- Update access_levels field
+                registration_number = p_registrationNumber
+            WHERE id = p_id
+CONTEXT:  PL/pgSQL function sp_manage_consultant(integer,character varying,character varying,integer,character varying,character varying,character varying,character varying,character varying) line 12 at SQL statement', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$qGsqvWhonpNv3Z6k3oLQAOUr0i.LXMXO9zNx2yV0xX5KIFznjxFly\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$qGsqvWhonpNv3Z6k3oLQAOUr0i.LXMXO9zNx2yV0xX5KIFznjxFly\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_manage_Consultant(
+                    CAST(\'50\' AS INTEGER),  -- ID will be provided for update
+                    CAST(\'siddhesh kadge\' AS VARCHAR),
+                    CAST(\'MBBS\' AS VARCHAR),
+                    CAST(3 AS INTEGER),
+                    CAST(\'Consultant\' AS VARCHAR),
+                    CAST(\'$2y$10$qGsqvWhonpNv3Z6k3oLQAOUr0i.LXMXO9zNx2yV0xX5KIFznjxFly\' AS VARCHAR),
+                    CAST(\'7777777774\' AS VARCHAR),
+                    CAST(\'[5,9,10,11,12]\' AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(\'MMC-2023-123456\' AS VARCHAR)   -- Registration number
+                )')
+ 5 APPPATH\Controllers\Home.php(412): CodeIgniter\Database\BaseConnection->query('CALL sp_manage_Consultant(
+                    CAST(? AS INTEGER),  -- ID will be provided for update
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS INTEGER),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),
+                    CAST(? AS VARCHAR),  -- Access levels as VARCHAR
+                    CAST(? AS VARCHAR)   -- Registration number
+                )', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->createcunsltant('tbl_register', '50')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-26 08:16:02 --> Received data: Array
+(
+    [systolic] => 120
+    [diastolic] => 80
+    [fasting] => 90
+    [pp] => 110
+    [weight] => 50
+    [bmi] => 3
+    [illness] => Haemophilus Influenzae Invasive Disease
+    [symptoms] => test
+    [treatment] => test
+    [followUpDate] => 2024-12-31
+    [fees] => 1000
+    [appointment_id] => 2
+    [record_date] => 2024-12-26
+)
+
+DEBUG - 2024-12-26 08:16:02 --> Appointment ID: 2
+DEBUG - 2024-12-26 08:16:02 --> Fees: 1000
+DEBUG - 2024-12-26 08:16:40 --> prescription: Array
+(
+    [appointment_id] => 2
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => Paracetmol
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 5
+                    [record_date] => 2024-12-26
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 500 gm
+                )
+
+        )
+
+)
+
+DEBUG - 2024-12-26 09:53:40 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-09
+                    [total_leave_days] => 5
+                    [diagnosis] => Haemophilus Influenzae Invasive Disease
+                )
+
+        )
+
+    [appointment_id] => 2
+    [record_date] => 2024-12-26
+)
+
+DEBUG - 2024-12-26 09:53:40 --> Appointment ID: 2
+DEBUG - 2024-12-26 12:24:21 --> prescription: Array
+(
+    [appointment_id] => 2
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => Paracetmol
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 5
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 500 gm
+                    [record_date] => 2024-12-26
+                )
+
+            [1] => Array
+                (
+                    [medicine] => Cirex
+                    [morning] => 
+                    [afternoon] => 
+                    [evening] => 1
+                    [days] => 5
+                    [record_date] => 2024-12-26
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 250 gm
+                )
+
+        )
+
+)
+

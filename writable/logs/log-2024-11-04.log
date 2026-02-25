@@ -1,0 +1,504 @@
+WARNING - 2024-11-04 04:21:34 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 597.
+ 1 APPPATH\Controllers\Home.php(597): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-04 04:21:34 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 598.
+ 1 APPPATH\Controllers\Home.php(598): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-11-04 04:21:34 --> Primary Table: 
+DEBUG - 2024-11-04 04:21:34 --> Select Fields: *
+DEBUG - 2024-11-04 04:21:34 --> Joins: Array
+(
+)
+
+DEBUG - 2024-11-04 04:21:34 --> Where: Array
+(
+)
+
+WARNING - 2024-11-04 04:25:36 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 597.
+ 1 APPPATH\Controllers\Home.php(597): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-04 04:25:36 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 598.
+ 1 APPPATH\Controllers\Home.php(598): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-11-04 04:25:36 --> Primary Table: 
+DEBUG - 2024-11-04 04:25:36 --> Select Fields: *
+DEBUG - 2024-11-04 04:25:36 --> Joins: Array
+(
+)
+
+DEBUG - 2024-11-04 04:25:36 --> Where: Array
+(
+)
+
+CRITICAL - 2024-11-04 05:14:20 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::update(), 1 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: POST, Route: update/tbl_booked_slots]
+in APPPATH\Controllers\Home.php on line 254.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->update('tbl_booked_slots')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 05:49:35 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-11-04 06:40:43 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+CRITICAL - 2024-11-04 06:40:43 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:40:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:42:13 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+CRITICAL - 2024-11-04 06:42:13 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:42:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:42:17 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+CRITICAL - 2024-11-04 06:42:17 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:42:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'FROM'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time", ...
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:43:57 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_id'.
+CRITICAL - 2024-11-04 06:43:57 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_id'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:43:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_id'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CD\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot_id" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:46:10 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+CRITICAL - 2024-11-04 06:46:10 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:46:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:48:45 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+CRITICAL - 2024-11-04 06:48:45 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:48:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:48:49 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+CRITICAL - 2024-11-04 06:48:49 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:48:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 06:49:16 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+CRITICAL - 2024-11-04 06:49:16 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 06:49:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'slot_time'.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = \'conducted\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slot_time"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(801): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getConductedAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 08:51:50 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot insert the value NULL into column 'slot', table 'OPDclinic.dbo.tbl_appointment'; column does not allow nulls. INSERT fails.
+ERROR - 2024-11-04 10:59:22 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "tbl_register.name" could not be bound.
+CRITICAL - 2024-11-04 10:59:22 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "tbl_register.name" could not be bound.
+[Method: GET, Route: get_cancelled_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(863): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 10:59:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "tbl_register.name" could not be bound.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CN\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CN\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(863): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-11-04 11:00:05 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "tbl_register.name" could not be bound.
+CRITICAL - 2024-11-04 11:00:05 --> CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "tbl_register.name" could not be bound.
+[Method: GET, Route: get_cancelled_appointments]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 2 APPPATH\Controllers\Home.php(863): CodeIgniter\Database\SQLSRV\Builder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:00:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The multi-part identifier "tbl_register.name" could not be bound.
+in SYSTEMPATH\Database\SQLSRV\Connection.php on line 484.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\SQLSRV\Connection->execute('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CN\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = \'CN\'')
+ 3 SYSTEMPATH\Database\SQLSRV\Builder.php(632): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slots_time" AS "slot_time", "tbl_branch"."branch_name" AS "branch_name", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name" AS "section_name"
+FROM "OPDclinic"."dbo"."tbl_appointment"
+LEFT JOIN "OPDclinic"."dbo"."tbl_slots" ON "tbl_appointment"."slot" = "tbl_slots"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_consultants" ON "tbl_appointment"."consultant" = "tbl_consultants"."id"
+LEFT JOIN "OPDclinic"."dbo"."tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."appointment_status" = :tbl_appointment.appointment_status:', [...], false)
+ 4 APPPATH\Controllers\Home.php(863): CodeIgniter\Database\SQLSRV\Builder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getCancelledAppointments()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:37:53 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::update(), 1 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: POST, Route: update/tbl_booked_slots]
+in APPPATH\Controllers\Home.php on line 254.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->update('tbl_booked_slots')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:39:10 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::update(), 1 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: POST, Route: update/tbl_booked_slots]
+in APPPATH\Controllers\Home.php on line 254.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->update('tbl_booked_slots')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:39:12 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::update(), 1 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: POST, Route: update/tbl_booked_slots]
+in APPPATH\Controllers\Home.php on line 254.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->update('tbl_booked_slots')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:51:32 --> ErrorException: Undefined property: stdClass::$branchId
+[Method: POST, Route: getslots/tbl_slots]
+in APPPATH\Controllers\Home.php on line 429.
+ 1 APPPATH\Controllers\Home.php(429): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$branchId', 'C:\\xampp\\htdocs\\OPDClinic\\app\\Controllers\\Home.php', 429)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getslots('tbl_slots')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:51:45 --> ErrorException: Undefined property: stdClass::$branchId
+[Method: POST, Route: getslots/tbl_slots]
+in APPPATH\Controllers\Home.php on line 429.
+ 1 APPPATH\Controllers\Home.php(429): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$branchId', 'C:\\xampp\\htdocs\\OPDClinic\\app\\Controllers\\Home.php', 429)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getslots('tbl_slots')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-04 11:52:48 --> ErrorException: Undefined property: stdClass::$branchId
+[Method: POST, Route: getslots/tbl_slots]
+in APPPATH\Controllers\Home.php on line 429.
+ 1 APPPATH\Controllers\Home.php(429): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$branchId', 'C:\\xampp\\htdocs\\OPDClinic\\app\\Controllers\\Home.php', 429)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getslots('tbl_slots')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

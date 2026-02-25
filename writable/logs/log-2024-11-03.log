@@ -1,0 +1,134 @@
+CRITICAL - 2024-11-03 13:30:11 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::fetchWithDynamicJoins(), 0 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and at least 1 expected
+[Method: GET, Route: fetchWithDynamicJoins]
+in APPPATH\Controllers\Home.php on line 591.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-03 13:31:35 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::fetchWithDynamicJoins(), 0 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and at least 1 expected
+[Method: GET, Route: fetchWithDynamicJoins]
+in APPPATH\Controllers\Home.php on line 591.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-03 13:32:27 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::fetchWithDynamicJoins(), 0 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and at least 1 expected
+[Method: GET, Route: fetchWithDynamicJoins]
+in APPPATH\Controllers\Home.php on line 591.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-03 13:40:51 --> ArgumentCountError: Too few arguments to function App\Controllers\Home::fetchWithDynamicJoins(), 0 passed in C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php on line 933 and at least 1 expected
+[Method: GET, Route: fetchWithDynamicJoins]
+in APPPATH\Controllers\Home.php on line 591.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-03 13:48:38 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 596.
+ 1 APPPATH\Controllers\Home.php(596): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-03 13:48:38 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 597.
+ 1 APPPATH\Controllers\Home.php(597): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-03 13:48:38 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: POST, Route: fetchWithDynamicJoins]
+in SYSTEMPATH\Database\BaseConnection.php on line 913.
+ 1 APPPATH\Controllers\Home.php(601): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-03 13:58:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: POST, Route: fetchWithDynamicJoins]
+in SYSTEMPATH\Database\BaseConnection.php on line 913.
+ 1 APPPATH\Controllers\Home.php(600): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-03 14:01:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: POST, Route: fetchWithDynamicJoins]
+in SYSTEMPATH\Database\BaseConnection.php on line 913.
+ 1 APPPATH\Controllers\Home.php(600): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-03 19:22:14 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 597.
+ 1 APPPATH\Controllers\Home.php(597): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-03 19:22:14 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 598.
+ 1 APPPATH\Controllers\Home.php(598): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-11-03 19:22:14 --> Primary Table: 
+DEBUG - 2024-11-03 19:22:14 --> Select Fields: *
+DEBUG - 2024-11-03 19:22:14 --> Joins: Array
+(
+)
+
+DEBUG - 2024-11-03 19:22:14 --> Where: Array
+(
+)
+
+WARNING - 2024-11-03 19:23:51 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 597.
+ 1 APPPATH\Controllers\Home.php(597): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2024-11-03 19:23:51 --> [DEPRECATED] json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in APPPATH\Controllers\Home.php on line 598.
+ 1 APPPATH\Controllers\Home.php(598): json_decode(null, true)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->fetchWithDynamicJoins()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-11-03 19:23:51 --> Primary Table: 
+DEBUG - 2024-11-03 19:23:51 --> Select Fields: *
+DEBUG - 2024-11-03 19:23:51 --> Joins: Array
+(
+)
+
+DEBUG - 2024-11-03 19:23:51 --> Where: Array
+(
+)
+

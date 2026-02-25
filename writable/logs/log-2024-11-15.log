@@ -1,0 +1,273 @@
+INFO - 2024-11-15 03:12:20 --> Fetching appointments with parameters: consultantId=3, branchId=1, tab=home
+INFO - 2024-11-15 03:12:22 --> Consultant Name: siddhesh kadge
+INFO - 2024-11-15 03:12:22 --> Query Result: []
+ERROR - 2024-11-15 03:32:32 --> Error connecting to the database: ErrorException: pg_connect(): Unable to connect to PostgreSQL server: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; (134.209.160.114) and accepting
+	TCP/IP connections on port 25060? in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:78
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_connect(): U...', 'C:\\xampp\\htdocs...', 78)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(78): pg_connect('host=db-postgre...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(421): CodeIgniter\Database\Postgre\Connection->connect(false)
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_app...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(1092): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->getAppointmentsWithSlots()
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-11-15 03:32:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [Postgre]: pg_connect(): Unable to connect to PostgreSQL server: could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host &quot;db-postgresql-nyc3-77473-do-user-18019081-0.g.db.ondigitalocean.com&quot; (134.209.160.114) and accepting
+	TCP/IP connections on port 25060?
+[Method: GET, Route: getAppointmentsWithSlots]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_slots"."slots_time", "tbl_register"."name" AS "consultant_name", "tbl_section"."section_name", "tbl_branch"."branch_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_slots" ON CAST(tbl_appointment.slot AS INTEGER) = tbl_slots.id
+LEFT JOIN "tbl_register" ON "tbl_appointment"."consultant" = "tbl_register"."id"
+LEFT JOIN "tbl_branch" ON "tbl_appointment"."branch" = "tbl_branch"."id"
+LEFT JOIN "tbl_section" ON "tbl_appointment"."section" = "tbl_section"."id"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:', [...], false)
+ 3 APPPATH\Controllers\Home.php(1092): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getAppointmentsWithSlots()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-15 03:37:12 --> ErrorException: Maximum execution time of 120 seconds exceeded
+[Method: GET, Route: get_conducted_appointments]
+in SYSTEMPATH\Database\Postgre\Connection.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-11-15 03:40:55 --> Fetching appointments with parameters: consultantId=3, branchId=1, tab=home
+INFO - 2024-11-15 03:40:56 --> Consultant Name: siddhesh kadge
+INFO - 2024-11-15 03:40:57 --> Query Result: [{"id":"19","branch":"1","hawservices":"","consultant":"3","healthissues":"fdsfsd","dates":"2024-11-28","full_name":"Prabhakar","age":"50","mobile_no":"9876753621","email_id":"prabha@gmail.com","locations":"yugyg hu h ","slot":"15","subscription":"","plan":"","subscriptiontype":"","startdate":"2024-11-14","section":"4","created_at":"2024-11-14 11:40:53.327028","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"20","branch":"1","hawservices":"","consultant":"3","healthissues":"fdsfsd","dates":"2024-12-19","full_name":"seeta","age":"23","mobile_no":"85783234542","email_id":"ccj@gmail.com","locations":"jhjdhjd","slot":"14","subscription":"","plan":"","subscriptiontype":"","startdate":"2024-11-14","section":"5","created_at":"2024-11-14 11:56:24.292669","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"18","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test 1","age":"25","mobile_no":"1010101010","email_id":"test1@co","locations":"xxx","slot":"19","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"3","created_at":"2024-11-14 11:33:51.91108","is_deleted":"N","payment_status":null,"appointment_status":"CN","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"21","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test","age":"25","mobile_no":"1212121212","email_id":"test@co","locations":"test","slot":"21","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"4","created_at":"2024-11-14 15:57:31.268293","is_deleted":"N","payment_status":"P","appointment_status":"CD","price":"500.00","branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"22","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test","age":"25","mobile_no":"1234567890","email_id":"test@com","locations":"xxx","slot":"22","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"5","created_at":"2024-11-14 18:29:45.423627","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"}]
+CRITICAL - 2024-11-15 04:13:39 --> ErrorException: Maximum execution time of 120 seconds exceeded
+[Method: GET, Route: getAppointmentsWithSlots]
+in SYSTEMPATH\Debug\Exceptions.php on line 209.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-11-15 05:21:56 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-15, serviceId=3
+INFO - 2024-11-15 05:21:58 --> Consultant Name: Kumar
+ERROR - 2024-11-15 05:21:58 --> ErrorException: pg_query(): Query failed: ERROR:  column tbl_appointment.health_service does not exist
+LINE 9: AND &quot;tbl_appointment&quot;.&quot;health_service&quot; = 3
+            ^ in C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php:193
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\xampp\\htdocs...', 193)
+#1 C:\xampp\htdocs\OPDClinic\system\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT "tbl_app...')
+#2 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT "tbl_app...')
+#3 C:\xampp\htdocs\OPDClinic\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_app...')
+#4 C:\xampp\htdocs\OPDClinic\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_app...', Array, false)
+#5 C:\xampp\htdocs\OPDClinic\app\Controllers\Home.php(691): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(933): App\Controllers\Home->getFilteredReport('tbl_appointment')
+#7 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\OPDClinic\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\OPDClinic\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\OPDClinic\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\OPDClinic\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-11-15 05:21:58 --> CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column tbl_appointment.health_service does not exist
+LINE 9: AND &quot;tbl_appointment&quot;.&quot;health_service&quot; = 3
+            ^
+[Method: POST, Route: get_filtered_report/tbl_appointment]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:
+AND "tbl_appointment"."consultant" = :tbl_appointment.consultant:
+AND "tbl_appointment"."branch" = :tbl_appointment.branch:
+AND "tbl_appointment"."dates" = :tbl_appointment.dates:
+AND "tbl_appointment"."health_service" = :tbl_appointment.health_service:', [...], false)
+ 2 APPPATH\Controllers\Home.php(691): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getFilteredReport('tbl_appointment')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-15 05:21:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: pg_query(): Query failed: ERROR:  column tbl_appointment.health_service does not exist
+LINE 9: AND &quot;tbl_appointment&quot;.&quot;health_service&quot; = 3
+            ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 198.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = \'N\'
+AND "tbl_appointment"."consultant" = 5
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."dates" = \'2024-11-15\'
+AND "tbl_appointment"."health_service" = 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = \'N\'
+AND "tbl_appointment"."consultant" = 5
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."dates" = \'2024-11-15\'
+AND "tbl_appointment"."health_service" = 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:
+AND "tbl_appointment"."consultant" = :tbl_appointment.consultant:
+AND "tbl_appointment"."branch" = :tbl_appointment.branch:
+AND "tbl_appointment"."dates" = :tbl_appointment.dates:
+AND "tbl_appointment"."health_service" = :tbl_appointment.health_service:', [...], false)
+ 4 APPPATH\Controllers\Home.php(691): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getFilteredReport('tbl_appointment')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-15 05:21:58 --> [Caused by] ErrorException: pg_query(): Query failed: ERROR:  column tbl_appointment.health_service does not exist
+LINE 9: AND &quot;tbl_appointment&quot;.&quot;health_service&quot; = 3
+            ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 193.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERROR:  column tbl_appointment.health_service does not exist
+LINE 9: AND &quot;tbl_appointment&quot;.&quot;health_service&quot; = 3
+            ^', 'C:\\xampp\\htdocs\\OPDClinic\\system\\Database\\Postgre\\Connection.php', 193)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(193): pg_query(Object(PgSql\Connection), 'SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = \'N\'
+AND "tbl_appointment"."consultant" = 5
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."dates" = \'2024-11-15\'
+AND "tbl_appointment"."health_service" = 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\Postgre\Connection->execute('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = \'N\'
+AND "tbl_appointment"."consultant" = 5
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."dates" = \'2024-11-15\'
+AND "tbl_appointment"."health_service" = 3')
+ 4 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = \'N\'
+AND "tbl_appointment"."consultant" = 5
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."dates" = \'2024-11-15\'
+AND "tbl_appointment"."health_service" = 3')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = :tbl_appointment.is_deleted:
+AND "tbl_appointment"."consultant" = :tbl_appointment.consultant:
+AND "tbl_appointment"."branch" = :tbl_appointment.branch:
+AND "tbl_appointment"."dates" = :tbl_appointment.dates:
+AND "tbl_appointment"."health_service" = :tbl_appointment.health_service:', [...], false)
+ 6 APPPATH\Controllers\Home.php(691): CodeIgniter\Database\BaseBuilder->get()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->getFilteredReport('tbl_appointment')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-11-15 05:22:58 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-15, serviceId=3
+INFO - 2024-11-15 05:23:00 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:23:00 --> Query Result: []
+INFO - 2024-11-15 05:26:38 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-14, serviceId=3
+INFO - 2024-11-15 05:26:41 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:26:41 --> Query Result: []
+INFO - 2024-11-15 05:42:40 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-14, serviceId=3
+INFO - 2024-11-15 05:42:42 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:42:42 --> Query Result: []
+INFO - 2024-11-15 05:43:24 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-14, serviceId=3
+INFO - 2024-11-15 05:43:26 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:43:26 --> Query Result: []
+INFO - 2024-11-15 05:48:00 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-14, serviceId=3
+INFO - 2024-11-15 05:48:02 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:48:02 --> Query Result: []
+INFO - 2024-11-15 05:49:58 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-14, serviceId=3
+INFO - 2024-11-15 05:50:00 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:50:00 --> Query Result: []
+INFO - 2024-11-15 05:56:58 --> Fetching appointments with parameters: consultantId=5, branchId=1, tab=home, date=2024-11-14, serviceId=3
+INFO - 2024-11-15 05:57:00 --> Consultant Name: Kumar
+INFO - 2024-11-15 05:57:01 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "tbl_appointment"."consultant" = 5
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."dates" = '2024-11-14'
+AND "tbl_appointment"."section" = 3
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 05:57:01 --> Query Result: []
+INFO - 2024-11-15 05:59:37 --> Fetching appointments with parameters: consultantId=1, branchId=1, tab=home, date=, serviceId=3
+INFO - 2024-11-15 05:59:39 --> Consultant Name: Exercise
+INFO - 2024-11-15 05:59:39 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "tbl_appointment"."consultant" IS NULL
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."section" = 3
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 05:59:39 --> Query Result: []
+INFO - 2024-11-15 05:59:54 --> Fetching appointments with parameters: consultantId=1, branchId=1, tab=home, date=, serviceId=6
+INFO - 2024-11-15 05:59:56 --> Consultant Name: Exercise
+INFO - 2024-11-15 05:59:56 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "tbl_appointment"."consultant" IS NULL
+AND "tbl_appointment"."branch" = 1
+AND "tbl_appointment"."section" = 6
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 05:59:56 --> Query Result: [{"id":"1","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-18","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"2","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-20","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"6","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"3","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-25","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"4","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-27","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"6","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"5","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-02","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"6","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-04","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"6","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"7","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-09","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"8","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-18","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"9","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-25","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"10","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-02","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"11","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-09","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"12","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-16","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"13","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-23","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"14","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-30","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"15","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2025-01-06","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"16","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2025-01-13","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"17","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2025-01-20","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null}]
+INFO - 2024-11-15 06:04:04 --> Fetching appointments with parameters: consultantId=, branchId=, tab=home, date=2024-11-18, serviceId=
+INFO - 2024-11-15 06:04:06 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "tbl_appointment"."dates" = '2024-11-18'
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 06:04:06 --> Query Result: [{"id":"1","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-18","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"8","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-18","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"23","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-11-18","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"2","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"}]
+INFO - 2024-11-15 06:04:28 --> Fetching appointments with parameters: consultantId=, branchId=, tab=home, date=, serviceId=
+INFO - 2024-11-15 06:04:30 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 06:04:30 --> Query Result: [{"id":"1","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-18","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"2","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-20","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"6","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"3","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-25","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"4","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-27","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"6","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"5","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-02","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"6","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-04","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"6","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"7","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-09","full_name":"Siddhesh","age":"23","mobile_no":"9421563410","email_id":"sdkj@wsdj.com","locations":"hhg ggdg s","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-14 11:12:56.149821","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"8","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-18","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"9","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-11-25","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"10","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-02","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"11","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-09","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"12","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-16","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"13","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-23","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"14","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2024-12-30","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"15","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2025-01-06","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"16","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2025-01-13","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"17","branch":"1","hawservices":null,"consultant":null,"healthissues":null,"dates":"2025-01-20","full_name":"Rushikesh","age":"23","mobile_no":"7588525381","email_id":"sdkj@wsdj.com","locations":"uth jfgj","slot":"1","subscription":null,"plan":"custom","subscriptiontype":"10 Days","startdate":"2024-11-15","section":"6","created_at":"2024-11-14 11:15:20.479052","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":null},{"id":"19","branch":"1","hawservices":"","consultant":"3","healthissues":"fdsfsd","dates":"2024-11-28","full_name":"Prabhakar","age":"50","mobile_no":"9876753621","email_id":"prabha@gmail.com","locations":"yugyg hu h ","slot":"15","subscription":"","plan":"","subscriptiontype":"","startdate":"2024-11-14","section":"4","created_at":"2024-11-14 11:40:53.327028","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"20","branch":"1","hawservices":"","consultant":"3","healthissues":"fdsfsd","dates":"2024-12-19","full_name":"seeta","age":"23","mobile_no":"85783234542","email_id":"ccj@gmail.com","locations":"jhjdhjd","slot":"14","subscription":"","plan":"","subscriptiontype":"","startdate":"2024-11-14","section":"5","created_at":"2024-11-14 11:56:24.292669","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"18","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test 1","age":"25","mobile_no":"1010101010","email_id":"test1@co","locations":"xxx","slot":"19","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"3","created_at":"2024-11-14 11:33:51.91108","is_deleted":"N","payment_status":null,"appointment_status":"CN","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"21","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test","age":"25","mobile_no":"1212121212","email_id":"test@co","locations":"test","slot":"21","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"4","created_at":"2024-11-14 15:57:31.268293","is_deleted":"N","payment_status":"P","appointment_status":"CD","price":"500.00","branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"23","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-11-18","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"2","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"24","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-11-20","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"8","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"25","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-11-25","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"2","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"26","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-11-27","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"8","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"27","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-12-02","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"2","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"28","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-12-04","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"8","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"29","branch":"1","hawservices":null,"consultant":"1","healthissues":"Back Pain","dates":"2024-12-09","full_name":"Riya","age":"23","mobile_no":"9898823685","email_id":"riya@gmail.com","locations":"Pune","slot":"2","subscription":null,"plan":"custom","subscriptiontype":"7 Days","startdate":"2024-11-18","section":"6","created_at":"2024-11-15 04:53:08.097147","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"Exercise"},{"id":"30","branch":"12","hawservices":null,"consultant":"5","healthissues":"Back Pain","dates":"2024-11-15","full_name":"Karan","age":"23","mobile_no":"9898823600","email_id":"karan@gmail.com","locations":"Pune","slot":"30","subscription":null,"plan":null,"subscriptiontype":null,"startdate":null,"section":"3","created_at":"2024-11-15 05:02:25.276118","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Nigadi Branch","consultant_name":"Kumar"},{"id":"22","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test","age":"25","mobile_no":"1234567890","email_id":"test@com","locations":"xxx","slot":"22","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"5","created_at":"2024-11-14 18:29:45.423627","is_deleted":"N","payment_status":"P","appointment_status":"PE","price":"600.00","branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"}]
+INFO - 2024-11-15 06:05:18 --> Fetching appointments with parameters: consultantId=3, branchId=, tab=home, date=, serviceId=
+INFO - 2024-11-15 06:05:20 --> Consultant Name: siddhesh kadge
+INFO - 2024-11-15 06:05:20 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "tbl_appointment"."consultant" = 3
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 06:05:20 --> Query Result: [{"id":"19","branch":"1","hawservices":"","consultant":"3","healthissues":"fdsfsd","dates":"2024-11-28","full_name":"Prabhakar","age":"50","mobile_no":"9876753621","email_id":"prabha@gmail.com","locations":"yugyg hu h ","slot":"15","subscription":"","plan":"","subscriptiontype":"","startdate":"2024-11-14","section":"4","created_at":"2024-11-14 11:40:53.327028","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"20","branch":"1","hawservices":"","consultant":"3","healthissues":"fdsfsd","dates":"2024-12-19","full_name":"seeta","age":"23","mobile_no":"85783234542","email_id":"ccj@gmail.com","locations":"jhjdhjd","slot":"14","subscription":"","plan":"","subscriptiontype":"","startdate":"2024-11-14","section":"5","created_at":"2024-11-14 11:56:24.292669","is_deleted":"N","payment_status":null,"appointment_status":"PE","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"18","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test 1","age":"25","mobile_no":"1010101010","email_id":"test1@co","locations":"xxx","slot":"19","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"3","created_at":"2024-11-14 11:33:51.91108","is_deleted":"N","payment_status":null,"appointment_status":"CN","price":null,"branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"21","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test","age":"25","mobile_no":"1212121212","email_id":"test@co","locations":"test","slot":"21","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"4","created_at":"2024-11-14 15:57:31.268293","is_deleted":"N","payment_status":"P","appointment_status":"CD","price":"500.00","branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"},{"id":"22","branch":"1","hawservices":"","consultant":"3","healthissues":"test","dates":"2024-11-14","full_name":"test","age":"25","mobile_no":"1234567890","email_id":"test@com","locations":"xxx","slot":"22","subscription":"","plan":"daily","subscriptiontype":"","startdate":"2024-11-14","section":"5","created_at":"2024-11-14 18:29:45.423627","is_deleted":"N","payment_status":"P","appointment_status":"PE","price":"600.00","branch_name":"Moshi, Pimpri-Chinchwad","consultant_name":"siddhesh kadge"}]
+INFO - 2024-11-15 06:05:40 --> Fetching appointments with parameters: consultantId=3, branchId=12, tab=home, date=, serviceId=
+INFO - 2024-11-15 06:05:42 --> Consultant Name: siddhesh kadge
+INFO - 2024-11-15 06:05:42 --> Last Executed Query: SELECT "tbl_appointment".*, "tbl_branch"."branch_name", "tbl_register"."name" as "consultant_name", "appointment_status"
+FROM "tbl_appointment"
+LEFT JOIN "tbl_branch" ON "tbl_branch"."id" = "tbl_appointment"."branch"
+LEFT JOIN "tbl_register" ON "tbl_register"."id" = "tbl_appointment"."consultant"
+WHERE "tbl_appointment"."is_deleted" = 'N'
+AND "tbl_appointment"."consultant" = 3
+AND "tbl_appointment"."branch" = 12
+AND "appointment_status" IN ('PE','CN','CD')
+INFO - 2024-11-15 06:05:42 --> Query Result: []

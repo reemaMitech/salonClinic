@@ -1,0 +1,20 @@
+CRITICAL - 2024-11-05 06:42:29 --> Error: Call to a member function updatePayment() on null
+[Method: POST, Route: submitPayment]
+in APPPATH\Controllers\Home.php on line 1055.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submitPayment()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-05 10:13:21 --> ErrorException: Undefined array key "appointment_status"
+[Method: POST, Route: submitPayment]
+in APPPATH\Models\HomeModel.php on line 17.
+ 1 APPPATH\Models\HomeModel.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "appointment_status"', 'C:\\xampp\\htdocs\\OPDClinic\\app\\Models\\HomeModel.php', 17)
+ 2 APPPATH\Controllers\Home.php(1114): App\Models\HomeModel->updatePayment([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submitPayment()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

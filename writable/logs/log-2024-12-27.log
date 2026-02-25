@@ -1,0 +1,63 @@
+INFO - 2024-12-27 06:26:37 --> Fetching appointments with parameters: consultantId=5, branchId=2, tab=home
+INFO - 2024-12-27 06:26:39 --> Consultant Name: DR. AMRUTA POTDAR
+INFO - 2024-12-27 06:26:39 --> Query Result: []
+DEBUG - 2024-12-27 07:28:47 --> Received data: Array
+(
+    [systolic] => 200
+    [diastolic] => 140
+    [fasting] => 200
+    [pp] => 210
+    [weight] => 100
+    [bmi] => 5
+    [illness] => carbapenem-resistant Enterobacteriaceae (CRE) infections
+    [symptoms] => carbapenem-resistant Enterobacteriaceae (CRE) infections
+    [treatment] => carbapenem-resistant Enterobacteriaceae (CRE) infections
+    [followUpDate] => 2024-12-31
+    [fees] => 1000
+    [appointment_id] => 6
+    [record_date] => 2024-12-27
+)
+
+DEBUG - 2024-12-27 07:28:47 --> Appointment ID: 6
+DEBUG - 2024-12-27 07:28:47 --> Fees: 1000
+DEBUG - 2024-12-27 07:29:10 --> Received data: Array
+(
+    [systolic] => 200
+    [diastolic] => 140
+    [fasting] => 200
+    [pp] => 210
+    [weight] => 100
+    [bmi] => 5
+    [illness] => carbapenem-resistant Enterobacteriaceae (CRE) infections
+    [symptoms] => carbapenem-resistant Enterobacteriaceae (CRE) infections
+    [treatment] => carbapenem-resistant Enterobacteriaceae (CRE) infections
+    [followUpDate] => 2024-12-31
+    [fees] => 1000
+    [appointment_id] => 6
+    [record_date] => 2024-12-27
+)
+
+DEBUG - 2024-12-27 07:29:10 --> Appointment ID: 6
+DEBUG - 2024-12-27 07:29:10 --> Fees: 1000
+DEBUG - 2024-12-27 07:30:32 --> prescription: Array
+(
+    [appointment_id] => 6
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => Paracetmol
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 4
+                    [record_date] => 2024-12-27
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 500 gm
+                )
+
+        )
+
+)
+

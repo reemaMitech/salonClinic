@@ -1,0 +1,30 @@
+
+# Logs & cache
+*.log
+writable/
+cache/
+
+# Composer
+vendor/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+
+
+
+# Debugger and log files
+/writable/debugbar/
+/writable/logs/*.log
+!writable/logs/index.html
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Development files
+/phpunit.xml
+/composer.phar

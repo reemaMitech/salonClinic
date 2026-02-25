@@ -1,0 +1,297 @@
+DEBUG - 2024-12-24 05:42:12 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-24
+                    [start_date] => 2024-12-09
+                    [total_leave_days] => 6
+                    [diagnosis] => Hand injury
+                )
+
+        )
+
+    [appointment_id] => 13
+    [record_date] => 2024-12-24
+)
+
+DEBUG - 2024-12-24 05:42:12 --> Appointment ID: 13
+DEBUG - 2024-12-24 05:45:56 --> Received data: Array
+(
+    [systolic] => 150
+    [diastolic] => 100
+    [fasting] => 1500
+    [pp] => 110
+    [weight] => 68
+    [bmi] => 6.9
+    [illness] => Test
+    [symptoms] => test
+    [treatment] => tesst
+    [followUpDate] => 2024-12-30
+    [fees] => 500
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-24
+                    [start_date] => 2024-12-09
+                    [total_leave_days] => 6
+                    [diagnosis] => Hand injury
+                )
+
+        )
+
+    [appointment_id] => 13
+    [record_date] => 2024-12-24
+)
+
+DEBUG - 2024-12-24 05:45:56 --> Appointment ID: 13
+DEBUG - 2024-12-24 05:45:56 --> Fees: 500
+ERROR - 2024-12-24 05:45:58 --> Error inserting data: Array to string conversion
+DEBUG - 2024-12-24 07:01:02 --> Received data: Array
+(
+    [systolic] => 140
+    [diastolic] => 80
+    [fasting] => 90
+    [pp] => 110
+    [weight] => 63
+    [bmi] => 6.2
+    [illness] => test
+    [symptoms] => test
+    [treatment] => tsewe
+    [followUpDate] => 2024-12-30
+    [fees] => 500
+    [appointment_id] => 13
+    [record_date] => 2024-12-24
+)
+
+DEBUG - 2024-12-24 07:01:02 --> Appointment ID: 13
+DEBUG - 2024-12-24 07:01:02 --> Fees: 500
+DEBUG - 2024-12-24 07:03:06 --> Received data: Array
+(
+    [certificates] => Array
+        (
+            [0] => Array
+                (
+                    [issue_date] => 2024-12-16
+                    [start_date] => 2024-12-03
+                    [total_leave_days] => 7
+                    [diagnosis] => hand injury
+                )
+
+        )
+
+    [appointment_id] => 13
+    [record_date] => 2024-12-24
+)
+
+DEBUG - 2024-12-24 07:03:06 --> Appointment ID: 13
+CRITICAL - 2024-12-24 09:17:12 --> TypeError: print_r(): Argument #2 ($return) must be of type bool, array given
+[Method: POST, Route: submit-prescriptions]
+in APPPATH\Controllers\Home.php on line 2487.
+ 1 APPPATH\Controllers\Home.php(2487): print_r('prescription data in ci4', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->submit_prescriptions()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2024-12-24 09:19:47 --> prescription data: Array
+(
+    [appointment_id] => 13
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => t_zodiac
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 250 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [1] => Array
+                (
+                    [medicine] => caray
+                    [morning] => 
+                    [afternoon] => 
+                    [evening] => 1
+                    [days] => 4
+                    [record_date] => 2024-12-24
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 450 gm
+                )
+
+        )
+
+)
+
+DEBUG - 2024-12-24 09:30:04 --> prescription: Array
+(
+    [appointment_id] => 13
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => caray
+                    [morning] => 
+                    [afternoon] => 
+                    [evening] => 1
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 450 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [1] => Array
+                (
+                    [medicine] => fanxa
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 4
+                    [record_date] => 2024-12-24
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 250 gm
+                )
+
+        )
+
+)
+
+DEBUG - 2024-12-24 09:31:06 --> prescription: Array
+(
+    [appointment_id] => 13
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => caray
+                    [morning] => 
+                    [afternoon] => 
+                    [evening] => 1
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 450 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [1] => Array
+                (
+                    [medicine] => fanxa
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 250 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [2] => Array
+                (
+                    [medicine] => tsese
+                    [morning] => 1
+                    [afternoon] => 
+                    [evening] => 
+                    [days] => 4
+                    [record_date] => 2024-12-24
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 150 gm
+                )
+
+        )
+
+)
+
+DEBUG - 2024-12-24 09:32:47 --> prescription: Array
+(
+    [appointment_id] => 13
+    [prescriptions] => Array
+        (
+            [0] => Array
+                (
+                    [medicine] => caray
+                    [morning] => 
+                    [afternoon] => 
+                    [evening] => 1
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 450 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [1] => Array
+                (
+                    [medicine] => fanxa
+                    [morning] => 
+                    [afternoon] => 1
+                    [evening] => 
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 250 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [2] => Array
+                (
+                    [medicine] => tsese
+                    [morning] => 1
+                    [afternoon] => 
+                    [evening] => 
+                    [days] => 4
+                    [liquidPerDay] => 
+                    [timing] => Before Food
+                    [unit] => 150 gm
+                    [record_date] => 2024-12-24
+                )
+
+            [3] => Array
+                (
+                    [medicine] => coughen
+                    [morning] => 1
+                    [afternoon] => 
+                    [evening] => 
+                    [days] => 4
+                    [record_date] => 2024-12-24
+                    [liquidPerDay] => 
+                    [timing] => After Food
+                    [unit] => 200 gm
+                )
+
+        )
+
+)
+
+DEBUG - 2024-12-24 12:33:43 --> Received data: Array
+(
+    [systolic] => 140
+    [diastolic] => 80
+    [fasting] => 90
+    [pp] => 110
+    [weight] => 63
+    [bmi] => 6.2
+    [illness] => test
+    [symptoms] => test
+    [treatment] => tsewe12
+    [followUpDate] => 2024-12-30
+    [fees] => 500
+    [appointment_id] => 13
+    [record_date] => 2024-12-24
+)
+
+DEBUG - 2024-12-24 12:33:43 --> Appointment ID: 13
+DEBUG - 2024-12-24 12:33:43 --> Fees: 500
